@@ -1,2 +1,2 @@
-# smc-cs03
-Santa Monica College cs03
+# smc
+Santa Monica College
