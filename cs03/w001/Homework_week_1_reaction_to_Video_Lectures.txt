@@ -1,16 +1,20 @@
 Here is a sample - use this format:
 
-1. Steve Jobs-How to Live Before You Die
+1. Nick Bostrom - The Simulation Argument (Full)
+https://www.youtube.com/watch?v=nnl6nY8YKHs&feature=youtu.be
 
-It was amazing to me how similar an innovative a technological genius’s life was to mine. You think of Steve Jobs as being a genius who probably has a p.h.d in multiple fields of computer science and engineering when in reality he never even finished college. In the beginning of the speech, Jobs talks about how he dropped out of college because he wasn't sure what he wanted to do and he found the required classes useless so he just decided to sit in on the classes he was interested in. I feel the same way. When I take a required class it is often boring, uninteresting, and seems useless to me. The only difference is nowadays I know that a college degree is relatively important and this is the reason I know I cannot dropout. It was also inspiring how jobs lived his life in the moment as if everyday was his last and saw what seemed like bad things, such as getting fired, as gifts and used them as an advantage.
+Nick Bostrom talks about the simulation argument. There are three propositions he says are true. First civilization in our stage of development go extinct before maturity. Next we lose interest in creating a simulation of the mind, conscious being. He calls them ancestor simulations. Lastly we are living in a simulation, since we are in a simulation then there are many simulations. This made me think about perception differently. Especially as a student working on the computer so often. I wish that I could work with this guy but I am not sure what I would do for him or his team. I wonder if he is interested in creating simulations. I think there are many tools for doing such things but I would wonder if he thinks that those are not true representations of simulations. I always wondered if we could jet past a few hundred decades and attempt to speed up our evolution what would happen. He is interesting to listen to after a long day. 
 
-2. Nicholas Negroponte-OLPC to Columbia
+
+2. filler
 
 This lecture showed me how important technology is for children not just in first world countries but everywhere around the world. The reason for this importance is because technology is the key to connect kids who are secluded from the rest of the world to the rest of the world. These children may be computer geniuses and all they need is the opportunity to learn effectively which is what those computers were being used for. It was clear how important information and technology is to those children to inspire creative thought and innovation.
 
 3. Lorrie Faith Cranor-Passwords
 
-This lecture made me want to change my password. I unfortunately use the same variant of password for just about everything. It showed me how advanced something as simple as a password has needed to become because skilled hackers who are gifted in computer science have decided to steal them. It was also interesting to see the lengths that these hackers would go through to obtain a password. Even though my password is fairly strong I found it comical how weak many peoples’ passwords are.
+Lorem ipsum dolor sit amet, usu eu natum laudem. Per meis invenire laboramus at, sea ne tacimates vulputate sadipscing, id illud deserunt accusamus mel. Has errem virtute sensibus ut. No mea tale quas, ex sed fierent similique. Est ei oratio soleat facilis. Eam ad veri audire disputationi, has nulla viderer ne, quas expetendis appellantur eos ex.
+Ei quando tritani sensibus duo, eum an libris malorum facilisis. Te sed habeo senserit, te per soleat mentitum. Nulla ridens deterruisset ne mei, in per tota abhorreant. Mei no vide causae, mazim intellegebat ei vel.Sea vivendum adolescens te, quo cu magna offendit voluptua. Vim in utroque honestatis. Mea alienum commune eu. Accusam delicata pro in, dicta oblique has in, ex vix augue definiebas consectetuer.
+
 
 4. Brewster Kahle-A Free Digital Library
 
