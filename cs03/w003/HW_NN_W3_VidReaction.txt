@@ -1,0 +1,71 @@
+Here is a sample - use this format:
+
+1. Ray Kurzweil - A University for the coming singularity
+https://www.ted.com/talks/ray_kurzweil_announces_singularity_university
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+2. Stephen Wolfram - Computing a theory of all knowledge
+https://www.ted.com/talks/stephen_wolfram_computing_a_theory_of_everything
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+3. Kwabena Boahen - A computer that works like the brain
+https://www.ted.com/talks/kwabena_boahen_on_a_computer_that_works_like_the_brain
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+4. Gordon Browm - Wiring a web for global good
+https://www.ted.com/talks/gordon_brown
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+
+5. Chris Urmson - How a driverless car sees the road
+https://www.ted.com/talks/chris_urmson_how_a_driverless_car_sees_the_road
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+6. Mitch Resnick - Let's tech kids to code
+https://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+7. David McCandless - The beauty of data visualization
+https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+8. Nicholas Negroponte - Talking OLPC to Colombia
+https://www.ted.com/talks/nicholas_negroponte_takes_olpc_to_colombia
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+9. Danny Hills - The internet could crash. We need a Plan B
+https://www.ted.com/talks/danny_hillis_the_internet_could_crash_we_need_a_plan_b
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
+
+
+10. Conrad Wolfram - Teaching kids real math with computers
+https://www.ted.com/talks/conrad_wolfram_teaching_kids_real_math_with_computers
+
+Lorem ipsum dolor sit amet, eam ea sint feugiat, nam equidem omnesque ex. Ut mei nibh reque decore, ea tibique facilisi duo, an eum stet verear option. Nonumes assentior adipiscing ex sit, ad inani sensibus eam. Adhuc conceptam nec an.
+Eum eu eruditi consetetur, doming feugiat corpora in pri, ius ferri doctus disputationi ei. Id commune voluptatum duo, ea nam nonumy fabellas salutandi. Ex augue omnium scribentur vel, cibo lorem ne duo. Gloriatur instructior an sit, vel saepe munere te. Pro at illud saepe.
