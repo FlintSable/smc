@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/sci-arc-light.svg" width="400px" />
+      <h3>Campus Visit Feedback</h3>
+    </header>
+    <form>
+      <!-- Gender -->
+      <p>Gender:</p>
+      <input type="radio" id="male" name="gender" />
+      <label for="male">Male</label><br/>
+      <input type="radio" id="female" name="gender" />
+      <label for="female">Female</label><br/>
+      <input type="radio" id="other" name="gender" />
+      <label for="other">Other</label>
+
+      <!-- Interests -->
+      <p>Interests:</p>
+
+      <input type="checkbox" id="architecture" />
+      <label for="architecture">Architecture</label><br/>
+      <input type="checkbox" id="design" />
+      <label for="design">Design</label><br/>
+      <input type="checkbox" id="web" />
+      <label for="web">Web development</label><br/>
+      <input type="checkbox" id="photoshop" />
+      <label for="photoshop">Photoshop</label><br/>
+
+      <!-- visit details -->
+      <p>Rate Campus environment:</p>
+      <label for="atmosphere">Atmosphere</label>
+        <select name="atmosphere-rating" id="">
+          <option selected value="10">Amazing</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        <br/>
+      <label for="computers">Computer labs</label>
+        <select name="computer-rating" id="">
+          <option selected value="10">Amazing</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        <br/>
+      <label for="computers">Study areas</label>
+        <select name="study-rating" id="">
+          <option selected value="10">Amazing</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        <br><br>
+
+      <!-- Contact details -->
+      <fieldset>
+        <legend>Contact Info</legend>
+        <input type="user" placeholder="First Name" required />
+        <span class="tick"></span>
+        <input type="user" placeholder="Last Name" required />
+        <span class="tick"></span>
+        <input type="email" placeholder="Email" required />
+        <span class="tick"></span>
+        <input type="telephone" placeholder="Phone number" required />
+        <span class="tick"></span>
+      </fieldset>
+
+      <br/>
+      <input type="submit" value="Submit Feedback" />
+    </form>
+  </body>
+</html>
