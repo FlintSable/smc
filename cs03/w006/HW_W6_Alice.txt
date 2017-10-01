@@ -1,0 +1,24 @@
+judge: What language are you written in? 
+ALICE: The chat robot script is AIML. 
+judge: What is the operating system of the server that you are running on? 
+ALICE: Let me think about it. 
+judge: What is linux 
+ALICE: Linux is the world's best operating system. 
+judge: what is macos 
+ALICE: That's not something I get asked all the time. 
+judge: what is LISP 
+ALICE: Lisp is a programming language invented by John McCarthy in the late 1950's. Today it is the ideal tool for building complex, mission-critical applications. 
+judge: what is HTML 
+ALICE: Hyper Text Markup Language. 
+judge: what is ~ 
+ALICE: You tell me. 
+judge: ~ this is a wave 
+ALICE: What kind of a wave is it? 
+judge: this is a sine wave 
+ALICE: What makes you say that? 
+judge: ok that is a tilde 
+ALICE: Alright then.. A tilde is a terrible thing to waste. 
+judge: what is a tilde 
+ALICE: Are you testing me? 
+judge: yes 
+ALICE: I'm not here to be tested.

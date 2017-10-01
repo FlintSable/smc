@@ -1,0 +1,56 @@
+
+Nicholas Noochla-or Assinment 1
+
+Assignment Exercises for Chapter 1
+
+section 1.6
+	a) programming
+	b) Mnemonic
+	c) High-level language
+	d) Assembly language
+	e) Architecture of participation
+	f) Collective intelligence
+
+section 1.7
+	a) Java
+	b) C Language
+	c) Groupon
+	d) C++
+
+section 1.9
+	a) IPv6
+	b) Hyperlinks
+	c) URL
+	d) get, post
+	e) Bottom Tier, Middle Tier, Top Tier
+	f) Google's Android
+section 1.11
+	Client side programming would be working with the view. That would include the 		markup and styling. Sometimes client side code will include retrieval, posting, 	updating or deleting data on the back end. 
+
+	Server side code would working with the code that actually serves out the web 		site. Having a runtime environment that you would code routes and communicate with 	databases. The server side code would do things like transform data and process 	data from an API. That code would then serve the client side code. The client side 	would then display it in a visually understandable way. 
+
+section 1.13
+	Cloud computing lets you utilize hardware that is off site. Hardware that could be 	more up to date. This allows you to be free from the maintenance of the hardware. 	That is one benefit of using the cloud model.
+
+	Secondly it has a low cost startup ability if you didn't already have hardware. 	You can get a production environment up and running in very very little time. You 	also benefit from the support that the cloud service has. If you have any issues 	setting up the web application you can have experts for support. 
+
+	Now maybe the best part of cloud computing is the scalability. The ability to spin 	up servers with applications is very cheep in comparison to buying new hardware. 	Getting the power and software issues sorted. The cloud service might also already 	be working with load balancing and optimization methods. If you don't know 		anything about all of that well you get the benefit of those guys and gals who are 	so much more experienced. 
+
+	Cloud is nothing different than servers that are remote. The people running those 	shops have been running those types of things for years. Cloud is just a catchy 	name. 
+
+
+section 1.17
+	Javascript to me seems like a real object oriented language. The rest to me seem 	like Class based languages. An object has attributes with values. Those are going 	to be specific datatypes. An object can also have functions stored in them. Here 	is an example of a watch object. This is an object literal.
+	var watch = {type:"Apple", model:"Series 3", color:"Black"};
+
+	There is also the constructor function which is also known as an object factory. 	These look like the following. This has two parts. The function definition and the 	instance. 
+	function Watch(type, model, color){
+		this.type = type;
+		this.model = model; 
+		this.color = color;
+		}
+
+	The instance would look like such.
+		var BlueWatch = new Watch('Apple', 'series 3', 'blue');
+
+

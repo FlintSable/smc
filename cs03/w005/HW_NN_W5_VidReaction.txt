@@ -1,6 +1,5 @@
 Here is a sample - use this format:
 
-<<<<<<< HEAD
 1. Neil Gerchenfeld - On fab labs
 http://www.ted.com/index.php/talks/neil_gershenfeld_on_fab_labs.html
 
@@ -57,60 +56,3 @@ Indus script is the last major language that is not undeciphered. Language is re
 https://www.ted.com/talks/benoit_mandelbrot_fractals_the_art_of_roughness/up-next
 
 He is really old is what he says but his brain and mind still seem to be there. He sees patterns in roughness. Each part is like the whole but smaller. He talks about couliflour. He found that he could measure roughness which makes sense. 
-=======
-1. Scott Mccloud - The visual magic of comics
-https://www.ted.com/talks/scott_mccloud_on_comics/up-next
-
-Scott Mccloud is a really great speaker and inspiring artist and author. He shows us the importance of visual communications. Which is even more important than ever. I do like his perspective on learning and understanding. I feel like I grew up with similar interests and influences. He is able to communicate so much through abstraction and symbolism. The entire boundary of visual iconography. I think what he is talking about applies to software and computer networking because he has a tool for explaining concepts and lessons. Sometimes he is just giving instructions. 
-
-
-2. Danielle Feinberg - The magic ingredient that brings Pixar movies to life
-https://www.ted.com/talks/danielle_feinberg_the_magic_ingredient_that_brings_pixar_movies_to_life/up-next
-
-I really had not thought that computer science majors go into the entertainment industry. After all the scripts and sub routines there is still more that will be needed. I remember that maya uses python for automation. It also uses mel scripts. She has come such a long way through animation which is really really inspiring. She is focused on lighting. Animation is actually really amazing and this one is very inspiring. She makes art a science and that is a good thing sometimes. 
-
-
-3. Fei Fei Li - How we're teaching computers to understand pictures
-https://www.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures/up-next
-
-Fei Fei Li brings up a good point about our society today.  We create the most video and visual images of any other time. Yet we are still so far from solving some basic human problems. Sometimes I am in such a tunnel that I forget that computers cannot really see. They are lacking in a very fundamental skill. The technology that we have today can really help with her en-devour. Now we are teaching robots. I never really thought we would be doing that. I feel like the future is now.
-
-
-4. Dennis Hong - My seven species of robot - and how we craeted them
-https://www.ted.com/talks/dennis_hong_my_seven_species_of_robot/up-next
-
-I love robots at this point. This guy is also inspired my nature and sci fi. His interest in local motion is very import to making robots. These robots are really good for 2009. I am curios what we have today. What city will robot be released for regular consumption. How do independents make businesses with robots? Computer science is a really important skill and perspective of the world. 
-
-
-5. Jinha Lee - Reach into the computer and grab a pixel
-https://www.ted.com/talks/jinha_lee_a_tool_that_lets_you_touch_pixels/up-next
-
-
-
-6. Shyam Sankar - The rise of human-computer cooperation
-https://www.ted.com/talks/shyam_sankar_the_rise_of_human_computer_cooperation/up-next
-
-
-
-
-7. Daphne Koller - What we're learning from online education
-https://www.ted.com/talks/daphne_koller_what_we_re_learning_from_online_education/up-next
-
-
-
-
-8. Pattie Maes - Meet the SixthSense interation
-https://www.ted.com/talks/pattie_maes_demos_the_sixth_sense/up-next
-
-
-
-
-9. Richard Baraniuk - The birth of the open-source learning revolution
-https://www.ted.com/talks/richard_baraniuk_on_open_source_learning/up-next
-
-
-
-10. Pw Singer - Military robots and the future of war
-https://www.ted.com/talks/pw_singer_on_robots_of_war/up-next
-
->>>>>>> 539fed2a1ee77913e3727a15a095f61ce72fbff3
