@@ -1,0 +1,35 @@
+Chapter 1 Exercises
+You need to turn in your answers only. You do NOT need to turn in the questions.
+
+Note: These questions were provided by the publisher for chapter 1 of our textbook - Internet & World Wide Web How to Program, 5th edition by Paul Deitel, Harvey Deitel, and Abbey Deitel. The exercise number does not necessarily correspond to the section in which the topic is covered.
+
+Note: Be sure to scroll down (or enlarge the textarea box) to see the complete assignment.
+
+1.6 Fill in the blanks in each of the following statements:
+a) The process of instructing the computer to solve a problem is called _______.
+b) What type of computer language uses Englishlike abbreviations for machine-language instructions? _______.
+c) The level of computer language at which it’s most convenient for you to write programs quickly and easily is _______.
+d) The only language that a computer directly understands is called that computer's _______.
+e) Web 2.0 embraces an _______—a design that encourages user interaction and community contributions.
+f) _______ is the concept that a large, diverse group of people will create smart ideas.
+
+1.7 Fill in the blanks in each of the following statements:
+a) _______ is now used to develop large-scale enterprise applications, to enhance the functionality of web servers, to provide applications for consumer devices and for many other purposes.
+b) _______ initially became widely known as the development language of the UNIX operating system.
+c) The Web 2.0 company _______ is the fastest growing company ever.
+d) The _______ programming language was developed by Bjarne Stroustrup in the early 1980s at Bell Laboratories.
+
+1.9 Fill in the blanks in each of the following statements:
+a) _______ is the next-generation Internet Protocol that features built-in security and a new addressing scheme, significantly expanding the number of addresses available.
+b) HTML documents normally contain _______, which, when clicked, load a specified web document.
+c) A _______ contains information that directs a browser to the resource that the user wishes to access; _______ make such resources available to web clients.
+d) The two most common HTTP request types are _______ and _______.
+e) Web-based applications are multitier applications. The _______ (also called the data tier or the information tier) maintains the application’s data and typically stores data in a relational database management system. The _______ implements business logic, controller logic and presentation logic to control interactions between the application’s clients and its data. The _______, or client tier, is the application’s user interface, which gathers input and displays output.
+f) _______, the fastest growing mobile and smartphone operating system, is based on the Linux kernel and Java.
+
+1.11 Describe the difference between client-side programming and server-side programming.
+
+1.13 (Cloud Computing) Describe three benefits of the cloud computing model.
+
+1.17 (Watch as an Object) You’re probably wearing on your wrist one of the world’s most common types of objects—a watch. Discuss how each of the following terms and concepts applies to the notion of a watch: object, attributes, behaviors, class, inheritance (consider, for example, an alarm clock), abstraction, modeling, messages, encapsulation, interface and information hiding.
+Hint: See section 1.14 Object Technology in the textbook. Also, please see the section on Object Technology in Lecture 1. Just try to understand the concepts and terms. Use your own words to answer the question.
