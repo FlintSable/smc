@@ -14,3 +14,5 @@ img tag - <img></img> - for the main page image, with a src of the .png and the 
 ul tag - <ul></ul> - for the list of links in the footer, I would also include the <li></li> eleemnts for the individual items
 a tag - <a href='url'></a> - I would use this for the various links on the page
 h1, h2, h3 tags - I would use these for the titles and main sections of the grided items
+
+Of the tags that we did not use I would like to incude some form actions that would send some json to the server. 
