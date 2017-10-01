@@ -1,0 +1,16 @@
+I would like to make a page with a simple navigation and a main jumbotron image. 
+
+Below the image I would like to have a simple grid of a few items 6-9. 
+Below that I would like to have footer with a short list of links one of which would include a form. 
+
+Doctype tag - <!DOCTYPE html>
+HTML tag - <HTML></HTML>
+Head tag - <head></head>
+Body tag - <body></body>
+Division tag - <div></div> - for the separations of the header, navigation, body and footer
+	I would also use the div tags for the grided items, maybe for those parts include h3, img, summary maybe more
+Nav tag - <nav></nav> - for navigation menu at the top
+img tag - <img></img> - for the main page image, with a src of the .png and the width and height defined.
+ul tag - <ul></ul> - for the list of links in the footer, I would also include the <li></li> eleemnts for the individual items
+a tag - <a href='url'></a> - I would use this for the various links on the page
+h1, h2, h3 tags - I would use these for the titles and main sections of the grided items
