@@ -1,0 +1,16 @@
+2.2 Editing HTML5
+2.3 First HTML5 Example
+	- Documents type Declarations 
+	- Blank Lines
+	- Comments
+	- html, head and body elements 
+	- start tags and end tags 
+		- title elements <title></title>
+		- paragraph elements <p></p>
+		- end tags </end>
+2.4 W3C HTML5 Validation Service
+	- 
+	- 
+2.5 Headings
+2.6 Linking 
+2.7 Images

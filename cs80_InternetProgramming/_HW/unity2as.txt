@@ -1,0 +1,38 @@
+Chapter 4
+
+4.3
+*{
+	font-size: 150%;
+	color:red;
+}
+
+4.4
+body { 
+	background-image: url('image.png');
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position: 50%;
+}
+
+
+4.5
+h1, h3 {
+	padding: 0.5em;
+	border-style: dashed;
+	margin: 0.5em;
+}
+
+4.6
+.green-move{
+	color:green;
+	padding-top: 25px;
+	padding-right: 15px;
+}
+
+
+
+Chapter 6
+
+var a = Number(prompt("Enter first number:"));
+var b = Number(prompt("Enter seccond number:"));
+alert(a+b);
