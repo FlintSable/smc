@@ -1,0 +1,39 @@
+4.3 Write a CSS rule that makes all text 1.5 times larger than the base font of the system and colors the text red.
+
+4.4 Write a CSS rule that places a background image halfway down the page, tiling it horizontally. The image should remain in place (i.e., not move) in the window when the user scrolls the document up or down.
+
+4.5 Write a CSS rule that gives all h1 and h2 elements a padding of 0.5 ems, a dashed border style and a margin of 0.5 ems.
+
+4.6 Write a CSS rule that changes the color of all elements containing attribute class = “greenMove” to green and shifts them down 25 pixels and right 15 pixels.
+
+
+
+4.3)
+* {
+	font-size: 1.5rem;
+	color: #FF0000;
+}
+
+4.4)
+.Bg-Img {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	right: 10%;
+	margin: auto;
+}
+
+4.5)
+h1, h2 {
+	padding: 0.5em;
+	border-style: dashed;
+	margin: 0.5em;
+}
+
+4.6)
+.greenMove {
+	background-color: #008000;
+	position: relative;
+	top: 25px;
+	left: 15px;
+}
