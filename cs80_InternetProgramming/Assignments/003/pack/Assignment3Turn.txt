@@ -1,0 +1,29 @@
+4.3)
+* {
+	font-size: 1.5rem;
+	color: #FF0000;
+}
+
+4.4)
+.Bg-Img {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	right: 10%;
+	margin: auto;
+}
+
+4.5)
+h1, h2 {
+	padding: 0.5em;
+	border-style: dashed;
+	margin: 0.5em;
+}
+
+4.6)
+.greenMove {
+	background-color: #008000;
+	position: relative;
+	top: 25px;
+	left: 15px;
+}
