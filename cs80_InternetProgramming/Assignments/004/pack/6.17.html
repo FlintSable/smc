@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6.17</title>
+	<script type = 'text/javascript'>
+		var confirm;
+		var inputOne;
+		var inputTwo;
+
+		function redirector(){
+			window.location.href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript";
+		} 
+
+		confirm = window.confirm( 'Compare two values?' )
+
+		if(confirm){
+			console.log('yes');
+			inputOne = window.prompt('Enter first number');
+			inputTwo = window.prompt('Enter second number');
+			n1 = parseInt(inputOne);
+			n2 = parseInt(inputTwo);
+
+			switch(confirm){
+				case n1 == n2:
+					console.log('these vals are the same')
+					document.writeln('<h1>These numbers are equal: ' + n1 +  ' & ' + n2 + '</h1>')
+					break;
+				case (n1 < n2):
+					console.log(n2 + ' is greater than ' + n1);
+					document.writeln('<h1>' + n2 + ' is larger than ' + n1);
+					break;
+				case (n1 > n2):
+					console.log(n2 + ' is less than ' + n1);
+					document.writeln('<h1>' + n2 + ' is less than ' + n1);
+					break;
+				default:
+					console.log('invalid inputs, try again')
+			}
+
+
+		} else {
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript
+			alert('Lets go read more about Javascript.');
+			window.setTimeout(redirector, 1000);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

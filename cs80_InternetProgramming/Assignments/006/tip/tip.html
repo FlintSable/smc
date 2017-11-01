@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Split Plus Tip</title>
+	<link rel="stylesheet" href="./css.css">
+	<link rel="stylesheet" href="./reset.css">
+</head>
+<body>
+	<div id='box'>
+		<div class="formtip">
+			<div class="tip1">
+			<form action="">
+		      <fieldset>
+		        <label for="bill">Bill</label>
+		        <input class="BillBox" onkeyup="KeyUpBill()" type="text" value="0.00" placeholder="0.00" required />
+				
+				<br>
+				<br>
+
+				<div class="tipbox">
+		        <label for="percent">Tip %</label>
+		        <span class="percent"></span>
+		        <input class="TipPer" onkeyup="KeyUpTip()" type="text" value="15%" placeholder="15 %" required />
+		    	</div>
+					
+				<br>
+				<br>
+				<br>
+
+				<label for="party">Number of people</label>
+		        <span class="party"></span>
+		        <input class="NumPeep" onkeyup="KeyUpPeep()" type="text" value="1" placeholder="1" required />
+
+		      </fieldset>
+			</form>
+			</div>
+		</div>
+
+		<div class="tiptotal">
+			<div id="tip">
+				<h3>Tip</h3>
+				$<span id='fu' class='tiptip'>0.00</span>
+			</div>
+			<div id="total">
+				<h3>Total</h3>
+				$<span class='totstots'>0.00</span>
+			</div>
+		</div>
+	</div>
+	<script src="./script.js"></script>
+</body>
+</html>

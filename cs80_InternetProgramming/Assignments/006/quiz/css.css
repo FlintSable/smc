@@ -1,0 +1,53 @@
+*{
+	/*background-color: #36454F;*/
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 20px;
+}
+
+.twenty {
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	position: relative;
+	color: white;
+	margin: 10px 20px 10px 20px;
+	background-color: rgba(0, 31, 63, 0.5);
+	text-align: center
+
+}
+
+header {
+	position: relative;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 35px; color: #FFF;
+  background-color: #FF851B;
+  padding: 10px 0px 10px 20px;
+  margin: 0px;
+
+}
+
+#ghost {
+	position: absolute;
+	margin: 20% 10% 20% 10%;
+	right: 0px;
+	top: 0px;
+}
+#ghost:hover {
+	cursor: pointer;
+}
+
+
+ul li {
+	margin-left: 20px;
+	width: 20%;
+	list-style: none;
+	cursor: pointer;
+}
+
+li:hover {
+	background-color: #FF851B;
+	border-radius: 100px;
+}

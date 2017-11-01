@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7.11 - Truckers Mileage</title>
+
+	<style>
+		body {
+     		padding: 50px;
+     		font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+     		background-color: #F2F6D0;
+     		color: #0074D9;
+ 		}
+	</style>
+</head>
+<h1>Truck Mileage Report: </h1>
+<hr>
+<body>
+
+	
+</body>
+
+	<script>
+		document.body.onload = runRoutine;
+
+
+		var totalMiles = 0;
+		var totalGallons = 0;
+		var totalTank = 0; 
+		MPG = 0;
+		var collection = [];
+
+
+
+		class Tank {
+			constructor(uid, miles, gallons){
+				this.name = uid;
+				this.miles = miles;
+				this.gallons = gallons;
+				this.truckObjTotal = miles/gallons;
+			}
+		};
+
+		function runRoutine(){
+					let miles = prompt('Enter miles traveled: ');
+					let gallons = prompt('Enter gallons for tank: ');
+					let truckUniqueGen = Math.floor(1000 + Math.random() * 9000);
+					let newTruck = 'truck_' + truckUniqueGen; 
+					var a = new Tank(newTruck, miles, gallons);
+					collection.push(a);
+					console.log('Miles: ' + miles + '\n' + 'Gallons: ' + gallons);
+					console.log(collection);
+
+					let again = confirm('another entry? ')
+					if (again){
+						runRoutine();
+					}else{
+						displayView();
+					}
+				}
+
+		function displayView(){
+			var bodybody = document.getElementsByTagName('body')[0];
+
+
+			for(i = 0; i < collection.length; i++){
+				let capsule = document.createElement('div');
+				let addAll = '<h3>' + 'Truck tank ID : ' + collection[i].name + '</h3>' + 
+								'<h4>' + 'Miles: ' + collection[i].miles + 
+								'       ' + 
+								'Gallons: ' + collection[i].gallons + '</h4>' + 
+								'<h4>' + 'Miles per gallon: ' + collection[i].truckObjTotal + '</h4><br>'
+
+				capsule.innerHTML = (addAll);
+				bodybody.appendChild(capsule);
+				totalMiles += parseInt(collection[i].miles);
+				totalGallons += parseInt(collection[i].gallons);
+				totalTank = parseInt(totalMiles/totalGallons);
+			}
+			let totalCap = document.createElement('div');
+			let addTotal = '<hr><b><h3>' + 'Total Miles driven: ' + totalMiles + '</h3></b>' + 
+							'<b><h4>' + 'Total Gallons Filled: ' + totalGallons + '</h4></b>' + 
+							'<b><h4>' + 'Grand Miles per Gallons: ' + totalTank + '</h4></b>';
+			totalCap.innerHTML = (addTotal);
+			bodybody.appendChild(totalCap);
+
+		}
+
+		// var enter = confirm('Create new truck recored?');
+
+		// if(enter){
+		// 	runRoutine();
+		// }else{
+		// 	console.log('display current records');
+		// };
+
+
+
+	</script>
+</html>
