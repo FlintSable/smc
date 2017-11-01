@@ -1,0 +1,52 @@
+* {
+	font-family: Arial, Verdana;
+}
+#box {
+	width: 533px;
+	height: 255px;
+	border: solid #D3D3D3 1px;
+	margin: 10% 10% 10% 10%;
+}
+
+.formtip {
+	display: inline-block;
+	vertical-align: top;
+	width:39%;
+}
+
+.tip1 {
+	border-right:;
+}
+
+.tiptotal {
+	display: inline-block;
+	overflow: hidden;
+	width: 59%;
+}
+
+.BillBox {
+	text-align: center;
+}
+
+.TipPer {
+	text-align: center;
+}
+
+.tipbox {
+	overflow: hidden;
+	float: left;
+	width: 100%;
+}
+
+.min1 {
+	width: 34px;
+	margin-left: -100;
+}
+
+.NumPeep {
+	text-align: center;
+}
+
+fieldset {
+	border: none;
+}

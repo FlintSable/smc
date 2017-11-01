@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7.12 - Credit Cap</title>
+	<!-- both script and style can go directly here
+		although later it would most likly be in separate files -->
+
+	<style>
+		
+	</style>
+</head>
+<body>
+
+	<button type='button' onClick='adminAccess()'>Admin</button>
+	
+</body>
+	<script>
+
+		function adminAccess(){
+			console.log('enter creds')
+			var creds = prompt('enter password(* hint - pass): ');
+			class Account{
+				constructor(AccId, StartingBal, chargeCount, credit, limit){
+					this.account = AccId;
+					this.bal = StartingBal;
+					this.charges = chargeCount;
+					this.credit = credit;
+					this.limit = limit;
+				}
+			}
+			if(creds  == 'pass'){
+				let AccId = prompt('Enter new Account Number: ');
+				let StartingBal = prompt('Balance: ');
+				let chargeCount = prompt('Charge Count: ');
+				let credit = prompt('How much credit are you issueing: ');
+				let limit = prompt('Define limit: ');
+				newAccount = new Account(AccId, StartingBal, chargeCount, credit, limit);
+				localStorage.setItem(AccId, JSON.stringify(newAccount));
+				document.writeln('<h1>' + 'Check local storage for accounts' + '</h1>');
+
+			}
+
+			
+		}
+		
+	</script>
+</html>
