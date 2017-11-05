@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<product category="Baked Goods">
+<product category="Baked Goods" subcategory="cookes" name="Grandma White’s cookies">
 	<nutrition>
 		<serving>1</serving>
 		<calories units="g" total="260" fat="100"></calories>
