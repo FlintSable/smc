@@ -1,0 +1,10 @@
+16.3
+Traditional Web app (old school):
+One way of describing the client/ server interaction is the classic web form. The client would fill out the form then submit. The browser would then submit a request to the server. The server would have a route for the request and handle it accordingly. The client would then wait for a responce then reload the entire page. In this technique the interation between the client and server is synccroous so the user cannot interact with the client web page. 
+
+AJAX Web app:
+The significant difference here is that we create an XMLHttpRequest object to manage a request. The object sends a request to the server and awaits the response. Now this is also different because the requests are asynchronous meaning they can happen along side other actions on the web page. Then on the client end we have a callback function awaiting the server response so it can perform some code. Then the page can be partially updated and that is pretty huge in itself. 
+
+
+
+16.5
