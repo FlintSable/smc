@@ -1,0 +1,57 @@
+18.3 Define the following terms:
+
+a) Qualified name
+	A qualified name is a reference to a specific object, function or variable. In this case it would be the tableName.colName. It could be a reference with more explicit detail. 
+
+b) Rule of Referential Integrity
+	This concept is about the relation between a foreign key and primary key in a database. The primary key is going to dictate the foreign key in another table. The foreign key needs to have its primary reference or this cannot happen. The relational database will not allow for it so you need to make sure you design the tables and columns with that in mind. More so the PK and FKs.
+
+c) Rule of Entity Integrity
+	This is a basic requirement of Relational Databases. Databases have many rules, you just need to follow them to use the database. Similar to language and laws and culture. This particular constraint is used to make sure there is a Primary Key for every table. This Primary key becomes an identifier for the table. Makes the table more unique and more explicit.  
+
+d) selection criteria
+	This would allow you to create conditions for the results of your query. SQL has a designer interface where you can fill in the selection criteria. I guess this goes into the Query notebook. 
+
+18.4 State the purpose of the following SQL keywords:
+
+a) ASC
+	When selecting the data, this command will organize the results in Ascending order.
+b) FROM
+	This SQL statement is used to specify the table that you want to target. 
+
+c) DESC
+	This would help you organize your selection in decending order. For example if you had some records in a table that had a date attribute you could get those records reorganized in Decending order. That could be useful for many reasons. 
+
+d) INSERT
+	An insert in SQL would be how you would input the data into the tables. You would INSERT INTO TableName(ID, NAME, AGE, ADDRESS, SALARY) then VALUES(1021, 'Nooch', 32, 'OAK', 85,000 ); The first parts are the column names the seccond part after VALUES would be the actual data that would go into the row/records. Other databases have these kinds statements as well.
+
+e) LIKE
+	The LIKE statment goes with the WHERE statement and further specifies the condition that you are searching for in a table. This would search for something with the same characters as you are looking for or maybe with leading characters. Like is also used 
+
+f) UPDATE
+	An update would specify a table but it would take an expression including SET and WHERE. Update tableName is how it would start. 
+
+g) SET
+	This would follow the update. Which would specify the columns to update. You would use WHERE to specify the actual record. 
+
+h) VALUES
+	This would be used in combination with INSERT. The INSERT expression would be first followed by the VALUES keyword. After VALUES you would see a list of arguments. Which would include the values that go into the columns. 
+
+i) ON
+	This is part of the INNER JOIN statement. You would first specify a Table that you would want to JOIN. Then following that ON. TableName.ColumnName = TableName.ColumnName;
+
+18.6 Fill in the blanks in each of the following statements:
+
+a) Entity Integrity
+
+b) Referential Integrity
+
+c) percent sign %
+
+d) Apache Derby
+
+e) Underscore _
+
+f) One to many
+
+g) Single quote
