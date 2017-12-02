@@ -1,0 +1,13 @@
+19.3
+a)	<?php
+		$name = "Paul";
+		print $name;
+	?>
+	
+b)	<?php 
+		print "Hello World";
+	?>
+
+19.5
+
+19.6
