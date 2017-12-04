@@ -1,13 +1,15 @@
 19.3
-a)	<?php
+a)	<?php 
+		print "Hello World";
+	?>
+b)	<?php
 		$name = "Paul";
 		print $name;
 	?>
-	
-b)	<?php 
-		print "Hello World";
-	?>
 
 19.5
+ Superglobal Arrays are one way of gathering execution environment information. The web form would send a post request. You define post attributes when coding the html form. The form element would have a method="post" action="form.php". Its recommended to use POST because it will not show the information in the URL when the browser sends the request. If you use GET for this type of HTTP request you will expose form information. The $_POST environment variable would then have key-value pairs that are available from the users input. This could be processed on the back end however we would want. 
+ 
 
 19.6
+Cookies are bits of information stored on your machine by websites. I think they are temporary storage of some type. Cookies maintain information about the client. Cookies could be used for shopping carts. That way when the user comes back they will still have items in their cart. Which would remind them that they wanted to buy these other items. We could create a web form, set the form attributes to POST with an action of cookies.php. This would mean that all of our form inputs would be accessible through the Superglobal Arrays. Such as $_POST["WhateverFormInputNamesWeHave"]. This is where we would use a PHP script at the bottom with the setcookie method. It takes in three arguments. setcookie('KeyName', $_POST['KeyName'], time());. This should allow us to store some form data into cookies to create temporary persistent data on the client machine. 
