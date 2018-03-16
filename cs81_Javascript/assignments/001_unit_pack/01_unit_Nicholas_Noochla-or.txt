@@ -1,0 +1,31 @@
+1. What is JavaScript? What are the advantages of implementing JavaScript on a site? Min: 75 words
+
+Adding JavaScript to a website could allow you to fetch data from different servers, databases or local system resources. Javascript can also be used to manipulate the Document Object Mode, which means the data presented to you as the UI. JavaScript also makes the site much more fun and gives the programmer the ability to write algorithms that solve problems. Sorting, saving data in  variables, iterating through items, grouping data into structures. The possibility and utility of having JavaScript for your site is pretty wide. One of the biggest advantages of using JavaScript would be the ability to import functions and libraries that come from solutions possibly solving the same problem that you were trying to solve.
+ 
+2. How is ECMAScript and JavaScript related? Min: 75 words
+
+ECMAScript is the scripting language specification that is standardized by Ecma international. JavaScript is the most common implementation of ECMAScript. It was derived from ECMAScript. The difference is that ECMAScript is the standard so the JavaScript is using ECMAScript as a guide line for all the various functionality. Mozilla is the current developer of JavaScript. Resources about the language can be found at the Mozilla Developer Network. ECMAScript is a specification defined in ECMA-262 for creating a general purpose scripting language. 
+
+3. What do these logical expressions evaluate to?
+
+true  && true = true  
+true  || false = true
+false && true = false    
+false || !(false) = true
+
+4. Using the Developer Tool Console built into any Browser output the sentence "Hello World, my name is yourFirstName yourLastName!". Replace yourFirstName and yourLastName with your actual first and last name.
+
+Hint: console.log() 
+Submit a screenshot
+
+5. What are the six basic types of values in JavaScript? Provide a short explanation of three of these types
+
+	strings - text
+	integers - numbers 
+	arrays - data structure with items in a list
+		var array = [item0, item1, item2, item3 item4]
+	objects - data structure with key value pairs
+		var vacuum = {type:"machine", model="F22", color:"blue" }
+	undefined - not defined at all
+	Null - null is empty
+	Boolean - true/false 1/0
