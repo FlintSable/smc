@@ -1,0 +1,4 @@
+1. good afternoon
+   undefined
+
+2. Uncaught ReferenceError: x is not defined
