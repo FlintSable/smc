@@ -1,0 +1,13 @@
+What do these logical expressions evaluate to?
+
+a. true && true
+solution: true
+
+b. true || false
+solution: true
+
+c. false && !(true)
+solution: false
+
+d. !(false) && !(false)
+solution: true

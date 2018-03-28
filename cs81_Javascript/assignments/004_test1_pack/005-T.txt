@@ -1,0 +1,4 @@
+Automatic type conversion
+
+
+JavaScript has data types but at first it may seem as if you are free to call methods and operations on data without knowing what the data type is. The language and its various built in functions and methods will convert your data into the output that it needs. To list a few examples: any user input given to a script will be of type string, any output to the browser will be of type string. An issue comes about when your integers get automatically casted with the type string. In strictly typed languages you would have to define the data type when you define the variables but JavaScript will do that for you, it just needs to syntactically have the form of the data type. The syntactical form applies to data types like objects, functions and arrays. There are ways to enforce type which will probably need to be used to data validate when precision is needed.
