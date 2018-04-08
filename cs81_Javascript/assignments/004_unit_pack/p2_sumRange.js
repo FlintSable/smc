@@ -10,9 +10,9 @@
 // // 55
 
 
+
 const range = (x, y, z) => {
 	let ranger = [];
-
 
 	if(x < y){
 		for(let i = x; i < y + z; i += z){
@@ -48,6 +48,8 @@ const summ = (x) => {
 
 
 
+
 console.log(summ(range(1, 10, 2)));
+
 
 
