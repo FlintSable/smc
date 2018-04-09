@@ -1,5 +1,5 @@
 // Problem #1 - Contacts Script
-
+// script runs with node.js 
 var contacts = require('./dataSet.json');
 
 
