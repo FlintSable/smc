@@ -1,0 +1,34 @@
+Problem #1 
+
+Define a Employee.Prototype for the Employee constructor function shown below. The Employee.Prototype should have the property ssn set to "000-00-0000" and dept set to "empty". Also define a Employee.Prototype method that returns the follow string "firstName lastName : dept" .
+
+Note: You can modify the below code in anyway to create the require Prototypes properties and/or method. 
+
+function Employee(first, last, ssn, eid, dept) {
+this.firstName = first;
+this.lastName = last;
+this.ssn = ssn;
+this.eid = eid;
+this.dept = dept;
+}
+
+var eJohnDoe = new Employee("John", "Doe", "123-34-1234", "001234", "acct");
+var eSallyRally = new Employee("Sally", "Rally","123-34-1235", "001235", "hr");
+
+ 
+
+Problem #2 
+
+Create a an Object constructor function called BankAcct with the properties acctNum, acctOwner, checkBalance, saveBalance, acctType.  
+
+Define a BankAcct.prototype method called checkTransfer() that accepts a amount as an argument. The method should check if the amount + checkBalance is greater than 0 before setting a new checkBalance amount. 
+
+ 
+
+Problem #3
+
+Write a JavaScript function to check if an object contains given property. Create a function checkGivenProperty() that accepts a object and a property name as arguments and return true or false.
+
+Tip 1: Use hasOwnProperty.call() 
+
+Tip 2: First create an object with properties , then use hasOwnProperty.call() to check for a given property. 
