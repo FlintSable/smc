@@ -34,8 +34,9 @@ var RoeRoger = new Passenger('row', 'rogger', 55, 'B12', 4);
 // in this case all the object created with this constructor 
 // will have the property modicalHistory
 
-checkGivinProperty(RoeRoger, 'medicalHistory');
-checkGivenPropertyUndefined(RoeRoger, 'medicalHistory');
+console.log(checkGivenProperty(RoeRoger, 'medicalHistory'));
+console.log(checkGivenPropertyUndefined(RoeRoger, 'medicalHistory'));
+
 
 
 
