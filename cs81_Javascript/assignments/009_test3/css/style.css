@@ -1,0 +1,13 @@
+#container{
+	height: 400px;
+	width: 600px;
+	position: relative;
+}
+
+img {
+	position: absolute;
+	left: 0;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+
+}
