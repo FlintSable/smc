@@ -18,9 +18,9 @@ function checkGivenProperty(obj, prop){
 function checkGivenPropertyUndefined(obj, prop){
 	if(checkGivenProperty(obj,prop)){
 		if(obj.prop === undefined){
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		};	
 		
 	};
@@ -36,6 +36,7 @@ var RoeRoger = new Passenger('row', 'rogger', 55, 'B12', 4);
 
 console.log(checkGivenProperty(RoeRoger, 'medicalHistory'));
 console.log(checkGivenPropertyUndefined(RoeRoger, 'medicalHistory'));
+
 
 
 

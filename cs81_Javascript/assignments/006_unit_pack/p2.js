@@ -10,14 +10,19 @@ function BankAcct(acctNum, acctOwner, checkingBalance, saveBalance, acctType){
 }
 
 BankAcct.prototype.checkTransfer = function(amount){
-	let accountChk = (amount + this.checingkBalance) > 0
-	if(accountChk){
+	let results = amount + this.checkingBalance > 0;
+	if(results){
 		this.checkingBalance = this.checkingBalance - amount; 
-		console.log(this.checkingBalance);
+		return 'transfer completed' + '\n' + 'New Balance:' + this.checkingBalance;
+	} else {
+		return 'insuficient funds';
 	}
 }
 
 
-var EagleAccount = new BankAcct('435465', 'Elias Herloom', 1000000, 100000000, 'Silver');
+var SuperAccount = new BankAcct('454534', 'Elings Humloom', 100000, 100000000, 'international');
+var SuperAccount2 = new BankAcct('12345', 'Roe Roger', 0, 24, 'international');
 
-console.log(EagleAccount.checkTransfer());
+
+console.log(SuperAccount.checkTransfer(100));
+console.log(SuperAccount2.checkTransfer(100));
