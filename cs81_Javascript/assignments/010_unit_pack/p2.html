@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Problem #2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// add code 
+			var increment;
+			
+			$("#btn1").click(function(){
+				var senario = Math.random() < .5 ? "1" : "2";
+
+				$('p').each(function(index){
+					if($(this).attr('data-state') == 'on'){
+						$(this).append(' paragraph');
+					};
+
+					if($(this).attr('data-state') == 'off'){
+					};
+					console.log($(this).attr('data-state'));
+
+				});
+
+			});
+
+			$("#btn2").click(function(){
+				increment = $('ol li').length + parseInt(1);
+				$('ol').append('<li>' + 'List item ' + increment + '</li>');
+			})
+		});
+
+
+
+
+	</script>
+</head>
+<body>
+	<p data-state="on">This is a paragraph.</p>
+	<p data-state="off">This is a another paragraph.</p>
+
+	<ol>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ol>
+
+	<button id="btn1">Append text</button>
+	<button id="btn2">Append list items</button>
+
+</body>
+</html>
