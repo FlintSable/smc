@@ -1,0 +1,78 @@
+html {
+	postition: relative;
+	padding: 1px;
+	height: 5000px;
+	background-image: url(./box.svg);
+	background-color: #FCFBF2;
+
+}
+
+nav.menu {
+	position: fixed;
+
+}
+
+#container {
+	/*width: 500px;*/
+	/*height: 40px;*/
+	border: 1px solid red;
+	position: relative;
+}
+
+header {
+	position: relative;
+	display: block;
+	border: 1px solid red;
+	text-align: center;
+	height: 60vh;
+	margin: 3px;
+
+}
+
+
+header #headline{
+	margin: 50px;
+	position: relative;
+  	font-size: 9rem;
+
+	/* logo details */
+	text-shadow: 3px 3px rgba(254,106,104,0.5);
+    color: rgba(0,31,63, 0.9);
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #7FDBFF;
+    font-family: Righteous;
+    line-height: 40%;
+
+}
+
+header #sub-headline{
+  	font-size: 5rem;
+  	margin-top: -20px;
+  	color: #7FDBFF;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgba(0,31,63, 0.9);
+
+
+
+}
+header #summary{
+  	font-size: 2rem;
+  	margin-top: -5px;
+  	color: #7FDBFF;
+
+}
+
+
+div.row-content {
+	position: relative;
+	border: 1px solid red;
+}
+
+div.row {
+	position: relative;
+	/*margin-top: 10px;*/
+	height: 40vh;
+	border: 1px solid red;
+	
+}
+
