@@ -1,0 +1,15 @@
+
+MDN local library remake - benefit, thorough review
+
+redo app remake - benifit, revision
+	flash card generator
+	liri 
+	chirpy
+
+api - codecademny - benifit guidence
+	commic strip
+	x publishing
+	expresso
+
+React youtube app - benefit, react review
+Electron - benefit, technology
