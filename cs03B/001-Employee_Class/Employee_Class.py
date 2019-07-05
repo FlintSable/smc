@@ -16,17 +16,30 @@ class Employee:
         self.BENEFITS = self.determine_benifits()
         self.SHIFT = sSHIFT
 
-    # def get_shift(self):
-    #     return self.SHIFT.value
+    # mutator ("set") methods ------------------------------------------
+    @property
+    def employee_name(self):
+        return self.NAME
+
+    @property
+    def employee_id(self):
+        return self.EMPLOYEE_NUMBER
+    
+    @employee_name.setter
+    def employee_name(self, new_name):
+        self.NAME = new_name
+    
+    @employee_id.setter
+    def employee_id(self, new_num):
+        self.EMPLOYEE_NUMBER = new_num
 
     def determine_benifits(Emp_Num):
-        print(Emp_Num.EMPLOYEE_NUMBER)
         if(int(Emp_Num.EMPLOYEE_NUMBER) < 500):
             return True
         elif(int(Emp_Num.EMPLOYEE_NUMBER) >= 500):
             return False
 
-  
+
 class Shift(Enum):
     DAY = 1
     SWING = 2
@@ -39,8 +52,12 @@ def main():
     print("starting")
     Emp_1 = Employee("Jam Juice", 100, "SWING")
     print(Emp_1.NAME, Emp_1.EMPLOYEE_NUMBER, Emp_1.BENEFITS, Emp_1.SHIFT)
-    Emp_1.SHIFT = "NIGHT"
-    # print(Emp_1.get_shift())
+    Emp_1.employee_name = "Newbie"
+    Emp_1.employee_id = "230"
+
+    print(Emp_1.employee_name)
+    print(Emp_1.employee_id)
+
 
 
 
