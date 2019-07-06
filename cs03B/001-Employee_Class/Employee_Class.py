@@ -25,6 +25,10 @@ class Employee:
     def employee_id(self):
         return self.EMPLOYEE_NUMBER
     
+    @property
+    def employee_shift(self):
+        return self.SHIFT
+
     @employee_name.setter
     def employee_name(self, new_name):
         self.NAME = new_name
@@ -32,6 +36,10 @@ class Employee:
     @employee_id.setter
     def employee_id(self, new_num):
         self.EMPLOYEE_NUMBER = new_num
+    
+    @employee_shift.setter
+    def employee_shift(self, new_shift):
+        self.SHIFT = new_shift
 
     def determine_benifits(Emp_Num):
         if(int(Emp_Num.EMPLOYEE_NUMBER) < 500):
@@ -54,9 +62,11 @@ def main():
     print(Emp_1.NAME, Emp_1.EMPLOYEE_NUMBER, Emp_1.BENEFITS, Emp_1.SHIFT)
     Emp_1.employee_name = "Newbie"
     Emp_1.employee_id = "230"
+    Emp_1.employee_shift = "NIGHT"
 
     print(Emp_1.employee_name)
     print(Emp_1.employee_id)
+    print(Emp_1.employee_shift)
 
 
 
