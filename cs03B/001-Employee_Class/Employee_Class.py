@@ -2,6 +2,30 @@
 """
 from enum import Enum
 
+def main():
+    employee_directory = []
+    emp_1 = Employee()
+    emp_2 = Employee("Tom Jones", 374, 1)
+    emp_3 = Employee("Tim Smith", 99877, 1)
+    employee_directory.extend([emp_1, emp_2, emp_3])
+    print(employee_directory[0].to_string())
+    print(employee_directory[1].to_string())
+    print(employee_directory[2].to_string())
+    print("New user creation: \n")
+    print("Enter First and Lastname: ", end="")
+    f_name = input()
+    print("Enter id number: ", end="")
+    new_id = input()
+    validate_number(new_id)
+    
+    print("1 - DAY\n2 - SWING\n3 - NIGHT\n")
+    print("Enter number to enter shift information: ", end="")
+    new_shift = input()
+    emp_4 = Employee(f_name, int(new_id), int(new_shift))
+    employee_directory.append(emp_4)
+    print(employee_directory[3].to_string())
+
+
 def validate(data_name, data_number, data_shift):
     if(data_number < 100 or data_number > 999):
         return False
@@ -129,29 +153,6 @@ class Shift(Enum):
         ret_str = self.name[0].upper() + self.name[1:].lower()
         return ret_str
 
-
-def main():
-    employee_directory = []
-    emp_1 = Employee()
-    emp_2 = Employee("Tom Jones", 374, 1)
-    emp_3 = Employee("Tim Smith", 99877, 1)
-    employee_directory.extend([emp_1, emp_2, emp_3])
-    print(employee_directory[0].to_string())
-    print(employee_directory[1].to_string())
-    print(employee_directory[2].to_string())
-    print("New user creation: \n")
-    print("Enter First and Lastname: ", end="")
-    f_name = input()
-    print("Enter id number: ", end="")
-    new_id = input()
-    validate_number(new_id)
-    
-    print("1 - DAY\n2 - SWING\n3 - NIGHT\n")
-    print("Enter number to enter shift information: ", end="")
-    new_shift = input()
-    emp_4 = Employee(f_name, int(new_id), int(new_shift))
-    employee_directory.append(emp_4)
-    print(employee_directory[3].to_string())
 
 if __name__ == "__main__":
     main()
