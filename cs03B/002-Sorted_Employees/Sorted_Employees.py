@@ -5,6 +5,7 @@ import random
 import re
 
 def main():
+    employee_directory = []
     sudo_usernames_data = [
         "Inger Hella", 
         "Saga Janina",
@@ -27,19 +28,18 @@ def main():
         "Max Saveli",
         "Yeva Snezhana"
     ]
+    predict_shift = {
+        1 : "DAY",
+        2 : "SWING",
+        3 : "NIGHT"
+    }
 
-    for i in sudo_usernames_data:
-        predict_shift = {
-            1 : "DAY",
-            2 : "SWING",
-            3 : "NIGHT"
-        }
-
-        output = f'{i} {random.randrange(100,999)} {predict_shift[random.randrange(1,4)]}'
-        print(output)
+    for i, val in enumerate(sudo_usernames_data):
+        # output = f'{i} {val} {random.randrange(100,999)} {predict_shift[random.randrange(1,4)]}'
+        employee_directory.append(Employee(val, random.randrange(100, 999), random.randrange(1,4)))
+        print(employee_directory[i].to_string())
         
 
-    # employee_directory = []
     # emp_1 = Employee()
     # emp_2 = Employee("Tom Jones", 374, 1)
     # emp_3 = Employee("Tim Smith", 99877, 1)
