@@ -42,19 +42,32 @@ def main():
     EmployeeArrayUtilities.sort_array(employee_directory, array_size)
     EmployeeArrayUtilities.print_array(employee_directory, "\nAfter last-name sort: ")
 
-    s1 = Queue(10, Employee())
+    print("Enter an employee number to add to the queue: ", end="")
+    # s1 = Queue(10, Employee())
+    s1 = Queue(10, 0)
+
     print("capacity: ", s1.get_capacity())
     # print(employee_directory[0])
-    s1.add(employee_directory[0])
-    s1.add(employee_directory[1])
-    s1.add(employee_directory[2])
-    s1.add(employee_directory[3])
-    s1.add(employee_directory[4])
+    # s1.add(employee_directory[0])
+    # s1.add(employee_directory[1])
+    # s1.add(employee_directory[2])
+    # s1.add(employee_directory[3])
+    # s1.add(employee_directory[4])
+
+    s1.add(1)
+    s1.add(2)
+    s1.add(3)
+    s1.add(4)
+    s1.add(5)
+    s1.add(6)
 
     print(s1.que)
 
-    for k in range(0, 5):
+    for k in range(0, 3):
         print("[" + str(s1.remove()) + "]")
+
+    print(s1.que)
+    
 
 
     # emp_1 = Employee()
@@ -114,12 +127,20 @@ def validate_number(data_number):
         pass
         
 class EmployeeArrayUtilities:
+    NOT_FOUND = -1
+
     @staticmethod
     def print_array(employee_array, optional_title="--- The Employees -----------:\n"):
         print(optional_title)
         for i, val in enumerate(employee_array):
             print(val.to_string())
 
+    @classmethod
+    def binary_search_number(cls, data, key_number, first_index, last_index):
+        # exhausted search
+        if first_index > last_index:
+            return cls.NOT_FOUND
+        middle_index = int((first_index + last_index) / 2)
 
     @classmethod
     def sort_array(cls, data, array_size):

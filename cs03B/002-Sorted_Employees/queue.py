@@ -41,18 +41,24 @@ class Queue:
         if self.tos == self.capacity:
             return False
         elif type(item_to_add) != type(self.default_item):
-
             return False
         self.que[self.tos] = item_to_add
-        self.tos -= 1
+        self.tos += 1
         return True
 
     def remove(self):
-        if self.tos == 0:
-            return self.EMPTY_STACK_RETURN_ALERT
-        # else
-        self.tos += 1
-        return self.que[self.tos]
+        try:
+            temp_space = self.que[0]
+            del self.que[0]
+            self.que.extend([self.default_item])
+            return temp_space
+        except:
+            print("test")
+
+        # if self.tos == 0:
+        #     return self.EMPTY_STACK_RETURN_ALERT
+        # self.tos -= 1
+        # return self.que[self.tos]
 
     def clear(self):
         """  remove all items from stack """
