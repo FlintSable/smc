@@ -1,6 +1,7 @@
 """ Assignment Two: Sorted employees - Nicholas Noochla-or
 """
 from enum import Enum
+from queue import Queue
 import random
 import re
 
@@ -28,17 +29,46 @@ def main():
         "Max Saveli",
         "Yeva Snezhana"
     ]
-    predict_shift = {
-        1 : "DAY",
-        2 : "SWING",
-        3 : "NIGHT"
-    }
 
     for i, val in enumerate(sudo_usernames_data):
         # output = f'{i} {val} {random.randrange(100,999)} {predict_shift[random.randrange(1,4)]}'
         employee_directory.append(Employee(val, random.randrange(100, 999), random.randrange(1,4)))
-        print(employee_directory[i].to_string())
-        
+        # print(employee_directory[i].to_string())
+    print("Before id number sort: \n ----------")
+    EmployeeArrayUtilities.print_array(employee_directory)
+
+    array_size = len(employee_directory)
+    EmployeeArrayUtilities.print_array(employee_directory, "\nBefore last-name sort:")
+    EmployeeArrayUtilities.sort_array(employee_directory, array_size)
+    EmployeeArrayUtilities.print_array(employee_directory, "\nAfter last-name sort: ")
+
+    print("Enter an employee number to add to the queue: ", end="")
+    # s1 = Queue(10, Employee())
+    s1 = Queue(10, 0)
+
+    print("capacity: ", s1.get_capacity())
+    # print(employee_directory[0])
+    # s1.add(employee_directory[0])
+    # s1.add(employee_directory[1])
+    # s1.add(employee_directory[2])
+    # s1.add(employee_directory[3])
+    # s1.add(employee_directory[4])
+
+    s1.add(1)
+    s1.add(2)
+    s1.add(3)
+    s1.add(4)
+    s1.add(5)
+    s1.add(6)
+
+    print(s1.que)
+
+    for k in range(0, 3):
+        print("[" + str(s1.remove()) + "]")
+
+    print(s1.que)
+    
+
 
     # emp_1 = Employee()
     # emp_2 = Employee("Tom Jones", 374, 1)
@@ -96,7 +126,39 @@ def validate_number(data_number):
     except:
         pass
         
+class EmployeeArrayUtilities:
+    NOT_FOUND = -1
+
+    @staticmethod
+    def print_array(employee_array, optional_title="--- The Employees -----------:\n"):
+        print(optional_title)
+        for i, val in enumerate(employee_array):
+            print(val.to_string())
+
+    @classmethod
+    def binary_search_number(cls, data, key_number, first_index, last_index):
+        # exhausted search
+        if first_index > last_index:
+            return cls.NOT_FOUND
+        middle_index = int((first_index + last_index) / 2)
+
+    @classmethod
+    def sort_array(cls, data, array_size):
+        for k in range(array_size):
+            if not cls.float_largest_to_top(data, array_size - k):
+                return
+
     
+    @staticmethod
+    def float_largest_to_top(data, array_size):
+        changed = False
+        for k in range(array_size - 1):
+            if Employee.compare_two_employees(data[k], data[k + 1]) > 0:
+                data[k], data[k+1] = data[k+1], data[k]
+                changed = True
+        return changed
+
+
 class EmpNumError(Exception):
     """Value is less than 100 or greater then 999"""
     pass
@@ -145,7 +207,7 @@ class Employee:
     def to_string(self):
         employee_details = (f'{self.NAME} #{self.EMPLOYEE_NUMBER} '
                             f'({"Benifits" if self.BENEFITS else "No benefits"})'
-                            f'\nShift: {self.SHIFT.name}\n'
+                            f'\nShift: {self.SHIFT.name} \n ----------'
                             )
         return employee_details
 
@@ -180,6 +242,21 @@ class Employee:
     def employee_shift(self, new_shift):
         self.SHIFT = new_shift
 
+    # static/class methods -----------------------------------
+    @classmethod
+    def compare_two_employees(cls, first_employee, second_employee):
+        """ comparison done on parameters' last names """
+        return cls.compare_numbers(first_employee.employee_id, second_employee.employee_id)
+
+    @staticmethod
+    def compare_numbers(num1, num2):
+        """ returns -1 if first < second
+           +1 if first > second, and 0 if same """
+        if num1 < num2:
+            return -1
+        if num1 > num2:
+            return 1
+        return 0
 
 class Shift(Enum):
     DAY = 1
