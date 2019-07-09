@@ -7,10 +7,7 @@ def binary_search_for_last_name(cls, data, key_last_nm,
 
     middle_index = int((first_index + last_index) / 2)
 
-    result = Student.compare_strings_ignore_case(
-        key_last_nm,
-        data[middle_index].get_last_name()
-    )
+    result = Student.compare_strings_ignore_case(key_last_nm,data[middle_index].get_last_name())
 
     # < 0 means key before middle index
     if result < 0:
