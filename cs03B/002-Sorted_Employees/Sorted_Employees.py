@@ -1,30 +1,65 @@
 """ Assignment Two: Sorted employees - Nicholas Noochla-or
 """
 from enum import Enum
+import random
 import re
 
 def main():
-    employee_directory = []
-    emp_1 = Employee()
-    emp_2 = Employee("Tom Jones", 374, 1)
-    emp_3 = Employee("Tim Smith", 99877, 1)
-    employee_directory.extend([emp_1, emp_2, emp_3])
-    print(employee_directory[0].to_string())
-    print(employee_directory[1].to_string())
-    print(employee_directory[2].to_string())
-    print("New user creation: \n")
-    print("Enter First and Lastname: ", end="")
-    f_name = input()
-    print("Enter id number: ", end="")
-    new_id = input()
-    validate_number(new_id)
+    sudo_usernames_data = [
+        "Inger Hella", 
+        "Saga Janina",
+        "Alfred Dorotea",
+        "Tessan Helen",
+        "Michael Rigmor",
+        "Edith Ida",
+        "John Henrike",
+        "Hella Lukas",
+        "Thyra Karolina",
+        "Øyvind Nathalie",
+        "Miroslav Tikhon",
+        "Tòmas Prokhor",
+        "Timofei Vitaliy",
+        "Beileag Logan",
+        "Filipp Vadim",
+        "Ruaridh Lilia",
+        "Filat Svyatoslav",
+        "Sofiya Bhaltair",
+        "Max Saveli",
+        "Yeva Snezhana"
+    ]
+
+    for i in sudo_usernames_data:
+        predict_shift = {
+            1 : "DAY",
+            2 : "SWING",
+            3 : "NIGHT"
+        }
+
+        output = f'{i} {random.randrange(100,999)} {predict_shift[random.randrange(1,4)]}'
+        print(output)
+        
+
+    # employee_directory = []
+    # emp_1 = Employee()
+    # emp_2 = Employee("Tom Jones", 374, 1)
+    # emp_3 = Employee("Tim Smith", 99877, 1)
+    # employee_directory.extend([emp_1, emp_2, emp_3])
+    # print(employee_directory[0].to_string())
+    # print(employee_directory[1].to_string())
+    # print(employee_directory[2].to_string())
+    # print("New user creation: \n")
+    # print("Enter First and Lastname: ", end="")
+    # f_name = input()
+    # print("Enter id number: ", end="")
+    # new_id = input()
+    # validate_number(new_id)
     
-    print("1 - DAY\n2 - SWING\n3 - NIGHT\n")
-    print("Enter number to enter shift information: ", end="")
-    new_shift = input()
-    emp_4 = Employee(f_name, int(new_id), int(new_shift))
-    employee_directory.append(emp_4)
-    print(employee_directory[3].to_string())
+    # print("1 - DAY\n2 - SWING\n3 - NIGHT\n")
+    # print("Enter number to enter shift information: ", end="")
+    # new_shift = input()
+    # emp_4 = Employee(f_name, int(new_id), int(new_shift))
+    # employee_directory.append(emp_4)
+    # print(employee_directory[3].to_string())
 
 
 def validate(data_name, data_number, data_shift):
@@ -38,6 +73,7 @@ def validate(data_name, data_number, data_shift):
         return True       
     else:
         return False
+
 
 
 def validate_number(data_number):
@@ -159,27 +195,5 @@ if __name__ == "__main__":
     main()
 
 """
-a parameter given was incorrect
-a default object will be created
 
-unidentified #999 (No benefits)
-Shift: DAY
-
-Tom Jones #374 (Benifits)
-Shift: DAY
-
-unidentified #999 (No benefits)
-Shift: DAY
-
-New user creation: 
-
-Enter First and Lastname: Web Sou 
-Enter id number: 400
-1 - DAY
-2 - SWING
-3 - NIGHT
-
-Enter number to enter shift information: 3
-Web Sou #400 (Benifits)
-Shift: NIGHT
 """
