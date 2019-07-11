@@ -49,8 +49,12 @@ def main():
     # s1 = Queue(10, 0)
 
     found = EmployeeArrayUtilities.binary_search_number(employee_directory, int(new_search_value), 0, array_size - 1)
-    print("found: ", found)
-    print("capacity: ", s1.get_capacity())
+    # print("found: ", found)
+    if found != EmployeeArrayUtilities.NOT_FOUND:
+        print(new_search_value + " IS in list at position " + str(found))
+    else:
+        print(new_search_value + " is NOT in list.")
+    # print("capacity: ", s1.get_capacity())
     # print(employee_directory[0])
     # s1.add(employee_directory[0])
     # s1.add(employee_directory[1])
@@ -144,6 +148,7 @@ class EmployeeArrayUtilities:
         if first_index > last_index:
             return cls.NOT_FOUND
         middle_index = int((first_index + last_index) / 2)
+
         result = Employee.compare_numbers(key_number, data[middle_index].employee_id)
 
         if result < 0:
@@ -151,7 +156,6 @@ class EmployeeArrayUtilities:
 
         if result > 0:
             return cls.binary_search_number(data, key_number, middle_index + 1, last_index)
-        print("did it get here?", middle_index)
         return middle_index
 
 
