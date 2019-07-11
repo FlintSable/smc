@@ -42,11 +42,19 @@ def main():
     EmployeeArrayUtilities.sort_array(employee_directory, array_size)
     EmployeeArrayUtilities.print_array(employee_directory, "\nAfter last-name sort: ")
 
-    print("Enter an employee number to add to the queue: ", end="")
-    # s1 = Queue(10, Employee())
-    s1 = Queue(10, 0)
+    s1 = Queue(10, Employee())
 
-    print("capacity: ", s1.get_capacity())
+    print("Enter an employee number to add to the queue: ", end="")
+    new_search_value = input()
+    # s1 = Queue(10, 0)
+
+    found = EmployeeArrayUtilities.binary_search_number(employee_directory, int(new_search_value), 0, array_size - 1)
+    # print("found: ", found)
+    if found != EmployeeArrayUtilities.NOT_FOUND:
+        print(new_search_value + " IS in list at position " + str(found))
+    else:
+        print(new_search_value + " is NOT in list.")
+    # print("capacity: ", s1.get_capacity())
     # print(employee_directory[0])
     # s1.add(employee_directory[0])
     # s1.add(employee_directory[1])
@@ -68,7 +76,6 @@ def main():
 
     print(s1.que)
     
-
 
     # emp_1 = Employee()
     # emp_2 = Employee("Tom Jones", 374, 1)
@@ -141,6 +148,16 @@ class EmployeeArrayUtilities:
         if first_index > last_index:
             return cls.NOT_FOUND
         middle_index = int((first_index + last_index) / 2)
+
+        result = Employee.compare_numbers(key_number, data[middle_index].employee_id)
+
+        if result < 0:
+            return cls.binary_search_number(data, key_number, first_index, middle_index - 1)
+
+        if result > 0:
+            return cls.binary_search_number(data, key_number, middle_index + 1, last_index)
+        return middle_index
+
 
     @classmethod
     def sort_array(cls, data, array_size):
@@ -227,7 +244,7 @@ class Employee:
     def employee_shift(self):
         return self.SHIFT
 
-
+    # accessor ("get") methods -------------------------------
     @employee_name.setter
     def employee_name(self, new_name):
         self.NAME = new_name
@@ -257,6 +274,7 @@ class Employee:
         if num1 > num2:
             return 1
         return 0
+
 
 class Shift(Enum):
     DAY = 1
