@@ -76,6 +76,23 @@ def convert_units(celsius_value, units):
         return None
     return output
 
+def sort_rooms(sensor_details):
+    """
+    :param
+        sensor_dict:
+            dictionary of sensors
+    :return
+        a sorted list of tuples by room number
+
+    """
+    slist = list(sensor_details.items())
+    
+    # print(slist)
+    return sorted(slist, key = lambda the_tuple: the_tuple[0])
+    # print("start lambda sort")
+    # print( "key = room number\n",
+    #    sorted(homes_for_sale, key = lambda the_tuple: the_tuple[1]) )
+
 
 def new_file():
     print("Option 1 selected")
@@ -87,6 +104,7 @@ def choose_units():
 
 def change_filter():
     print("Option 3 selected")
+    print(sort_rooms(sensors))
 
 
 def show_summary():
@@ -105,6 +123,7 @@ def exit_program():
     print("Thank you for using the STEM Center Temperature Project")
 
 
+
 def main():
     # while True:
     #     try: 
@@ -115,6 +134,16 @@ def main():
     #     twiceNumber = userChoice * 2
         # print("Twice your number is", twiceNumber)
     print_header()
+    sensors = {
+            "4213": ("STEM Center" , 0),
+            "4201": ("Foundations Lab", 1),
+            "4204": ("CS Lab", 2),
+            "4218": ("Workshop Room", 3),
+            "4205": ("Tiled Room", 4),
+            "Out": ("Outside", 5)
+    }
+    active_sensors = [x[1][1] for x in list(sensors.items())]
+    print(active_sensors)
     exec_dict = {
         0 : convert_units,
         1 : new_file,
