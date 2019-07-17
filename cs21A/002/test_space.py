@@ -25,6 +25,7 @@ def print_menu():
     :print:
         Main Menu
         ---------
+        0 - Convert temperature
         1 - Process a new data file
         2 - Choose units
         3 - Edit room filter
@@ -37,6 +38,7 @@ def print_menu():
     output = (
         "\n\nMain Menu\n" +
         "---------\n" +
+        "0 - Convert temperature\n" +
         "1 - Process a new data file\n" +
         "2 - Choose units\n" +
         "3 - Edit room filter\n" +
@@ -74,20 +76,23 @@ def convert_units(celsius_value, units):
         return None
     return output
 
-def sensor_sort(sensor_details, sort_by=0):
+def sort_rooms(sensor_details):
     """
     :param
         sensor_dict:
             dictionary of sensors
-        sort_by(optional):
-            used to select what value to sort by
     :return
         a sorted list of tuples by room number
 
     """
     slist = list(sensor_details.items())
     slist = [(k,v1[0], v1[1]) for k,v1 in sensor_details.items()]
-    return sorted(slist, key = lambda the_tuple: the_tuple[sort_by])
+    
+    # print(slist)
+    return sorted(slist, key = lambda the_tuple: the_tuple[0])
+    # print("start lambda sort")
+    # print( "key = room number\n",
+    #    sorted(homes_for_sale, key = lambda the_tuple: the_tuple[1]) )
 
 
 def new_file():
@@ -98,60 +103,9 @@ def choose_units():
     print("Option 2 selected")
 
 
-def change_filter(sensors, filter_list):
-    """
-    :param
-        sensor_list:
-            list of tuples (srt, srt, int)
-        filter_list:
-            list of integers
-    :return:
-        void
-    """    
-    switch = 1
-    while(switch == 1):
-        print_filter(sensor_sort(sensors), filter_list)
-        print("\nType the sensor number to toggle (e.g.4201) or x to end 4201", end=' ')
-        filter_input = input()
-        local_sensor_list = sensor_sort(sensors)
-        if((filter_input == 'x') or (filter_input == 'X')):
-            switch = 0
-        if(filter_input in local_sensor_list[2] or filter_input.lower == "out"):
-            if(filter_input.lower() == "out"):
-                filter_input = "Out"
-            if(local_sensor_list[2] in filter_list):
-                filter_list.remove(local_sensor_list[2])
-            elif(sensors[filter_input] not in sensor_sort(sensors).keys()):
-                filter_list.append(sensor_sort(sensors)[filter_input])
-        elif(filter_input == 'x' or filter_input == 'X'):
-            pass
-        elif(filter_input not in sensors[1][1]):
-            print("Invalid Sensor")
-
-
-def print_filter(sensor_list, active_sensors):
-    """
-    4201: Foundations Lab [ACTIVE]
-    4204: CS Lab [ACTIVE]
-    4205: Tiled Room [ACTIVE]
-    4213: STEM Center [ACTIVE]
-    4218: Workshop Room [ACTIVE]
-    Out: Outside [ACTIVE]
-
-    :param
-        sensor_list:
-            list of tuples (srt, srt, int)
-        active_sensors:
-            list of integers
-    :return:
-        void
-    """
-    for i, (t1, t2, t3) in enumerate(sensor_list):
-        if(t3 in active_sensors):
-            print(f'{t1}: {t2} [ACTIVE]')
-        else:
-            print(f'{t1}: {t2}')
-
+def change_filter(sensors):
+    print("Option 3 selected")
+    print(sort_rooms(sensors))
 
 
 def show_summary():
@@ -182,8 +136,10 @@ def main():
             "4205": ("Tiled Room", 4),
             "Out": ("Outside", 5)
     }
-    filter_list = [x[1][1] for x in list(sensors.items())]
+    active_sensors = [x[1][1] for x in list(sensors.items())]
+    print(active_sensors)
     exec_dict = {
+        0 : convert_units,
         1 : new_file,
         2 : choose_units,
         3 : change_filter,
@@ -200,10 +156,10 @@ def main():
 
         while(not isinstance(user_menu_input, int) or
               user_menu_input >= 8 or
-              user_menu_input <= 0):
+              user_menu_input < 0):
             try:
                 user_menu_input = int(user_menu_input)
-                if (user_menu_input >= 8 or user_menu_input <= 0):
+                if (user_menu_input >= 8 or user_menu_input < 0):
                     print("Invalid Choice")
                     print_menu()
                     user_menu_input = input()
@@ -224,12 +180,18 @@ def main():
             except:
                 continue
 
-        if (user_menu_input == 1):
+        if (user_menu_input == 0):
+            print("Please enter a temperature in degrees Celsius ", end = "")
+            temp_input = input()
+            print(f"That's {exec_dict[user_menu_input](float(temp_input), 1)}" + 
+                    " degrees Fahrenheit and " + 
+                    f"{exec_dict[user_menu_input](float(temp_input), 2)} Kelvin")
+        elif (user_menu_input == 1):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 2):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 3):
-            exec_dict[user_menu_input](sensors, filter_list)
+            exec_dict[user_menu_input](sensors)
         elif (user_menu_input == 4):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 5):
@@ -242,7 +204,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-
-"""
