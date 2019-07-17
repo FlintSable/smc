@@ -87,12 +87,8 @@ def sort_rooms(sensor_details):
     """
     slist = list(sensor_details.items())
     slist = [(k,v1[0], v1[1]) for k,v1 in sensor_details.items()]
-    
-    # print(slist)
     return sorted(slist, key = lambda the_tuple: the_tuple[0])
-    # print("start lambda sort")
-    # print( "key = room number\n",
-    #    sorted(homes_for_sale, key = lambda the_tuple: the_tuple[1]) )
+ 
 
 
 def new_file():

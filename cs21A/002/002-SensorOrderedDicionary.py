@@ -1,12 +1,13 @@
 """ Assignment One: Opening Lines
     Author: Nicholas Noochla-or
-    Date: 7/16/2019
+    Date: 7/17/2019
 
     Enhancements in this release:
-    - Sensor sort function that returns a sorted sensor list
-    - Implement convert_units
-    - Call convert_units if menu option 0 selected
-    - Display converted temperature
+    - created and populated the sensors ordered dictionary
+    - populated filter_list from sensors using list comprehention
+    - implemented print_filter()
+    - implemented change_filter()
+    - implemented sensor_sort() with lambda expression
 """
 
 
