@@ -1,9 +1,9 @@
 """ Assignment One: Opening Lines
     Author: Nicholas Noochla-or
-    Date: 7/1/2019
+    Date: 7/16/2019
 
     Enhancements in this release:
-    - Print a menu
+    - Sensor sort function that returns a sorted sensor list
     - Implement convert_units
     - Call convert_units if menu option 0 selected
     - Display converted temperature
@@ -98,7 +98,7 @@ def choose_units():
     print("Option 2 selected")
 
 
-def change_filter(sensors, filter_list):
+def change_filter(sensors, filter_list, sensor_lookup):
     """
     :param
         sensor_list:
@@ -113,23 +113,21 @@ def change_filter(sensors, filter_list):
         print_filter(sensor_sort(sensors), filter_list)
         print("\nType the sensor number to toggle (e.g.4201) or x to end 4201", end=' ')
         filter_input = input()
-        local_sensor_list = sensor_sort(sensors)
         if((filter_input == 'x') or (filter_input == 'X')):
             switch = 0
-        if(filter_input in local_sensor_list[2] or filter_input.lower == "out"):
+        if(filter_input in sensor_lookup.keys() or filter_input.lower() == "out"):
             if(filter_input.lower() == "out"):
                 filter_input = "Out"
-            if(local_sensor_list[2] in filter_list):
-                filter_list.remove(local_sensor_list[2])
-            elif(sensors[filter_input] not in sensor_sort(sensors).keys()):
-                filter_list.append(sensor_sort(sensors)[filter_input])
+            if(sensor_lookup[filter_input] in filter_list):
+                filter_list.remove(sensor_lookup[filter_input])
+            elif(sensor_lookup[filter_input] not in sensor_lookup.keys()):
+                filter_list.append(sensor_lookup[filter_input])
         elif(filter_input == 'x' or filter_input == 'X'):
             pass
-        elif(filter_input not in sensors[1][1]):
+        elif(filter_input not in sensor_lookup.keys()):
             print("Invalid Sensor")
 
-
-def print_filter(sensor_list, active_sensors):
+def print_filter(sensor_list, filter_list):
     """
     4201: Foundations Lab [ACTIVE]
     4204: CS Lab [ACTIVE]
@@ -141,18 +139,18 @@ def print_filter(sensor_list, active_sensors):
     :param
         sensor_list:
             list of tuples (srt, srt, int)
-        active_sensors:
+        filter_list:
             list of integers
     :return:
         void
     """
+    print("\n")
     for i, (t1, t2, t3) in enumerate(sensor_list):
-        if(t3 in active_sensors):
+        if(t3 in filter_list):
             print(f'{t1}: {t2} [ACTIVE]')
         else:
             print(f'{t1}: {t2}')
-
-
+    
 
 def show_summary():
     print("Option 4 selected")
@@ -170,7 +168,6 @@ def exit_program():
     print("Thank you for using the STEM Center Temperature Project")
 
 
-
 def main():
 
     print_header()
@@ -182,6 +179,16 @@ def main():
             "4205": ("Tiled Room", 4),
             "Out": ("Outside", 5)
     }
+
+    sensor_lookup = {
+            "4213": 0,
+            "4201": 1,
+            "4204": 2,
+            "4218": 3,
+            "4205": 4,
+            "Out": 5
+    }
+
     filter_list = [x[1][1] for x in list(sensors.items())]
     exec_dict = {
         1 : new_file,
@@ -229,7 +236,7 @@ def main():
         elif (user_menu_input == 2):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 3):
-            exec_dict[user_menu_input](sensors, filter_list)
+            exec_dict[user_menu_input](sensors, filter_list, sensor_lookup)
         elif (user_menu_input == 4):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 5):
@@ -244,5 +251,83 @@ if __name__ == "__main__":
     main()
 
 """
+STEM Center Temperature Project 
+Nicholas Noochla-or
 
+
+Main Menu
+---------
+1 - Process a new data file
+2 - Choose units
+3 - Edit room filter
+4 - Show summary statistics 
+5 - Show temperature by date and time
+6 - Show histogram of temperatures
+7 - Quit
+
+What is your choice? 3
+
+
+4201: Foundations Lab [ACTIVE]
+4204: CS Lab [ACTIVE]
+4205: Tiled Room [ACTIVE]
+4213: STEM Center [ACTIVE]
+4218: Workshop Room [ACTIVE]
+Out: Outside [ACTIVE]
+
+Type the sensor number to toggle (e.g.4201) or x to end 4201 4201
+
+
+4201: Foundations Lab
+4204: CS Lab [ACTIVE]
+4205: Tiled Room [ACTIVE]
+4213: STEM Center [ACTIVE]
+4218: Workshop Room [ACTIVE]
+Out: Outside [ACTIVE]
+
+Type the sensor number to toggle (e.g.4201) or x to end 4201 4205
+
+
+4201: Foundations Lab
+4204: CS Lab [ACTIVE]
+4205: Tiled Room
+4213: STEM Center [ACTIVE]
+4218: Workshop Room [ACTIVE]
+Out: Outside [ACTIVE]
+
+Type the sensor number to toggle (e.g.4201) or x to end 4201 4205
+
+
+4201: Foundations Lab
+4204: CS Lab [ACTIVE]
+4205: Tiled Room [ACTIVE]
+4213: STEM Center [ACTIVE]
+4218: Workshop Room [ACTIVE]
+Out: Outside [ACTIVE]
+
+Type the sensor number to toggle (e.g.4201) or x to end 4201 400
+Invalid Sensor
+
+
+4201: Foundations Lab
+4204: CS Lab [ACTIVE]
+4205: Tiled Room [ACTIVE]
+4213: STEM Center [ACTIVE]
+4218: Workshop Room [ACTIVE]
+Out: Outside [ACTIVE]
+
+Type the sensor number to toggle (e.g.4201) or x to end 4201 x
+
+
+Main Menu
+---------
+1 - Process a new data file
+2 - Choose units
+3 - Edit room filter
+4 - Show summary statistics 
+5 - Show temperature by date and time
+6 - Show histogram of temperatures
+7 - Quit
+
+What is your choice? 
 """
