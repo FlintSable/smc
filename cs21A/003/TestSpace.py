@@ -19,15 +19,22 @@
 def main():
 
     current_set = TempDataset()
-    # current_set.set_name("New Name")
-    print(current_set.get_name())
+    current_set1 = TempDataset()
+    current_set2 = TempDataset()
+    print(current_set2.get_num_objects())
 
-    if not current_set.set_name("New Name"):
-        print("Fail")
-    elif current_set.get_name() == "New Name":
-        print("Success")
-    else:
-        print("Fail")
+    current_set3 = TempDataset()
+    print(current_set3.get_num_objects())
+
+    # current_set.set_name("New Name")
+    # print(current_set.get_name())
+
+    # if not current_set.set_name("New Name"):
+    #     print("Fail")
+    # elif current_set.get_name() == "New Name":
+    #     print("Success")
+    # else:
+    #     print("Fail")
 
     # print("First test of get_num_objects: ", end='')
 
@@ -123,6 +130,8 @@ class TempDataset:
     def __init__(self):
         self._name = "Unnamed"
         self._data_set = None
+        TempDataset.__counter += 1
+        
     
     def process_file(self, filename):
         return False
@@ -165,7 +174,7 @@ class TempDataset:
 
     @classmethod
     def get_num_objects(cls):
-        cls.__counter += 1
+        # cls.__counter += 1
         return cls.__counter
     
 

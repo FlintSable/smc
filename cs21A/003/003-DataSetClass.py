@@ -3,15 +3,14 @@
     Date: 7/22/2019
 
     Enhancements in this release:
-    - created and populated the sensors ordered dictionary
-    Create an object of type TempDataset(). 
-    Load temperature data into that object
-    Name our dataset and ask for its name
-    Ask for the number of temperature samples in the dataset
-    Ask for the number of temperature samples within a certain range
-    Ask for the average temperature for a particular day of the week and hour of the day
-    Get the minimum, average and maximum temperature as a tuple
-    Find out how many objects of TempDataset() have been created
+    - Create an object of type TempDataset(). 
+    - Load temperature data into that object
+    - Name our dataset and ask for its name
+    - Ask for the number of temperature samples in the dataset
+    - Ask for the number of temperature samples within a certain range
+    - Ask for the average temperature for a particular day of the week and hour of the day
+    - Get the minimum, average and maximum temperature as a tuple
+    - Find out how many objects of TempDataset() have been created
 
 """
 
@@ -71,6 +70,17 @@ def main():
     else:
         print("Fail")
 
+    print("- Try setting a name just right: ", end='')
+
+    try:
+        current_set.name = "New Name"
+        if current_set.name == "New Name":
+            print("Success")
+        else:
+            print("Fail")
+    except ValueError:
+        print("Fail")
+
     print("- Make sure we didn't touch the other object: ", end='')
     if second_set.get_name() == "Unnamed":
         print("Success")
@@ -108,12 +118,23 @@ def main():
         print("Fail")
 
 class TempDataset:
+    """
+        a class used to represent Temperature data
+
+        Attributes
+        _name: string
+            name of the data set object
+        _data_set: 
+            tuple of data
+    """
 
     __counter = int(0)
     
     def __init__(self):
         self._name = "Unnamed"
         self._data_set = None
+        TempDataset.__counter += 1
+
     
     def process_file(self, filename):
         return False
@@ -156,7 +177,6 @@ class TempDataset:
 
     @classmethod
     def get_num_objects(cls):
-        cls.__counter += 1
         return cls.__counter
     
 
@@ -164,5 +184,20 @@ if __name__ == "__main__":
     main()
 
 """
+
+First test of get_num_objects: Success
+Second test of get_num_objects: Success
+Testing get_name and set_name:
+- Default Name:Success
+- Try setting a name too short: Success
+- Try setting a name too long: Success
+- Try setting a name just right: Fail
+- Try setting a name just right: Success
+- Make sure we didn't touch the other object: Success
+Testing get_avg_temperature_day_time: Success
+Testing get_num_temps: Success
+Testing get_loaded_temps: Success
+Testing get_summary_statistics: Success
+Testing process_file: Success
 
 """
