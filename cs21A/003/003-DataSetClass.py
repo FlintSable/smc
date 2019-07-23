@@ -185,4 +185,19 @@ if __name__ == "__main__":
 
 """
 
+First test of get_num_objects: Success
+Second test of get_num_objects: Success
+Testing get_name and set_name:
+- Default Name:Success
+- Try setting a name too short: Success
+- Try setting a name too long: Success
+- Try setting a name just right: Fail
+- Try setting a name just right: Success
+- Make sure we didn't touch the other object: Success
+Testing get_avg_temperature_day_time: Success
+Testing get_num_temps: Success
+Testing get_loaded_temps: Success
+Testing get_summary_statistics: Success
+Testing process_file: Success
+
 """
