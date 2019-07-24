@@ -4,14 +4,8 @@
 
 
 def main():
-    a_var = "global value"
-
-    def outer():
-        global a_var
-        a_var = 'inner value'
-
-    print(a_var)
-
+    seq_2 = (x ** 2 for x in range(3, 9))
+    print(type(seq_2))
 
 
 
