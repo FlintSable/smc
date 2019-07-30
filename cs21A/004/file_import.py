@@ -1,13 +1,9 @@
-""" Assignment two: Sensor Ordered Dictionary and List
+""" Assignment four: File Import
     Author: Nicholas Noochla-or
-    Date: 7/17/2019
+    Date: 7/29/2019
 
     Enhancements in this release:
-    - created and populated the sensors ordered dictionary
-    - populated filter_list from sensors using list comprehention
-    - implemented print_filter()
-    - implemented change_filter()
-    - implemented sensor_sort() with lambda expression
+    - xxxxxxx
 """
 
 
@@ -168,6 +164,72 @@ def show_histogram():
 def exit_program():
     print("Thank you for using the STEM Center Temperature Project")
 
+class TempDataset:
+    """ a class used to represent Temperature data
+
+        Attributes
+        _soc_sec : string
+            the employee SSN
+        _wage : float
+            the employee's hourly wage
+        _age : int
+            the employee's age in years
+    """
+    __counter = int(0)
+
+    def __init__(self):
+        self._name = "Unnamed"
+        self._data_set = None
+
+    def process_file(self, filename):
+        return False
+    
+    def get_summary_statistics(self, active_sensors):
+        if(self._data_set == None):
+            return None
+        else:
+            return (0, 0, 0)
+    
+    def get_avg_temperature_day_time(self, active_sensors, day, time):
+        if(self._data_set == None):
+            return None
+        else:
+            return 0
+
+    def get_num_temps(self, active_sensors, lower_bound, upper_bound):
+        if(self._data_set == None):
+            return None
+        else:
+            return 0
+
+    def get_loaded_temps(self):
+        if(self._data_set == None):
+            return None
+        else:
+            return 0
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, new_name):
+        """
+        :param
+            new_name:
+                name for the dataset
+        :return:
+            void
+        """
+        if(len(new_name) < 3 or len(new_name) > 21 ):
+            raise ValueError
+        else:
+            self._name = new_name
+
+    @classmethod
+    def get_num_objects(cls):
+        cls.__counter += 1
+        return cls.__counter
 
 def main():
 
