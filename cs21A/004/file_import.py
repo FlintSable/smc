@@ -5,7 +5,7 @@
     Enhancements in this release:
     - xxxxxxx
 """
-
+import math
 
 def print_header():
     """
@@ -87,8 +87,21 @@ def sensor_sort(sensor_details, sort_by=0):
     return sorted(slist, key = lambda the_tuple: the_tuple[sort_by])
 
 
-def new_file():
-    print("Option 1 selected")
+def new_file(dataset):
+    try:
+        print("Please enter the filename of the new dataset:", end=" ")
+        filename = input()
+        test_file = open(filename, 'r')
+        test_file.close()
+        dataset.process_file(filename)
+        print(f"Loaded {dataset.get_loaded_temps()} samples")
+        print("Please provide a 3 to 20 character name for the dataset", end=" ")
+        data_name = input()
+        dataset.name = data_name
+        return True
+    except FileNotFoundError:
+        print("File not found, could not open file")
+        return False
 
 
 def choose_units():
@@ -182,7 +195,26 @@ class TempDataset:
         self._data_set = None
 
     def process_file(self, filename):
-        return False
+        self._data_set = []
+        try:
+            data_file = open(filename, 'r')
+            self._data_set = []
+            for next_line in data_file:
+                pre_tup = next_line.strip("\n").strip(",").split(",")
+                if(pre_tup[3] == "TEMP"):
+                    pre_tup[0] = int(pre_tup[0])
+                    pre_tup[1] = math.floor(float(pre_tup[1]) * 24)
+                    pre_tup[2] = int(pre_tup[2])
+                    pre_tup[4] = float(pre_tup[4])
+                    pre_tup.remove("TEMP")
+                    single_tuple = tuple(pre_tup)
+                    self._data_set.append(single_tuple)
+            data_file.close()
+            return True
+        except FileNotFoundError:
+            print("File not found.")
+            return False
+
     
     def get_summary_statistics(self, active_sensors):
         if(self._data_set == None):
@@ -203,8 +235,10 @@ class TempDataset:
             return 0
 
     def get_loaded_temps(self):
-        if(self._data_set == None):
+        if(self._data_set == None or self._data_set == []):
             return None
+        elif(self._data_set != []):
+            return len(self._data_set)
         else:
             return 0
 
@@ -251,7 +285,7 @@ def main():
             "4205": 4,
             "Out": 5
     }
-
+    current_set = TempDataset()
     filter_list = [x[1][1] for x in list(sensors.items())]
     exec_dict = {
         1 : new_file,
@@ -295,7 +329,7 @@ def main():
                 continue
 
         if (user_menu_input == 1):
-            exec_dict[user_menu_input]()
+            exec_dict[user_menu_input](current_set)
         elif (user_menu_input == 2):
             exec_dict[user_menu_input]()
         elif (user_menu_input == 3):
