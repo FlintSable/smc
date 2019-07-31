@@ -4,6 +4,10 @@
 
 
 def main():
+<<<<<<< HEAD
+    seq_2 = (x ** 2 for x in range(3, 9))
+    print(type(seq_2))
+=======
 
     various_nums = [77.5, 92, 80, -78.111, 690, 101.3, -3,1515927, 0.0003]
 
@@ -32,6 +36,7 @@ def main():
     #         continue
     #     twiceNumber = userChoice * 2
     #     print("Twice your number is", twiceNumber)
+>>>>>>> c5f10f50a2999d49a29b4fd073160d5f64fbbebf
 
 
 

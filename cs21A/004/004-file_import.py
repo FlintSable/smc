@@ -3,7 +3,11 @@
     Date: 7/29/2019
 
     Enhancements in this release:
-    - xxxxxxx
+    - implemented process_file()
+    - implemented get_loaded_temps()
+    - implemented new_file()
+    - implemented process_file()
+    - implemented process_file()
 """
 import math
 
@@ -242,23 +246,15 @@ class TempDataset:
         else:
             return 0
 
-    @property
-    def name(self):
+    def get_name(self):
         return self._name
-
-    @name.setter
-    def name(self, new_name):
-        """
-        :param
-            new_name:
-                name for the dataset
-        :return:
-            void
-        """
-        if(len(new_name) < 3 or len(new_name) > 21 ):
-            raise ValueError
+    
+    def set_name(self, new_name):
+        if(len(new_name) < 3 or len(new_name) > 21):
+            return False
         else:
             self._name = new_name
+            return True
 
     @classmethod
     def get_num_objects(cls):
@@ -348,7 +344,7 @@ if __name__ == "__main__":
     main()
 
 """
-STEM Center Temperature Project 
+STEM Center Temperature Project
 Nicholas Noochla-or
 
 
@@ -357,63 +353,15 @@ Main Menu
 1 - Process a new data file
 2 - Choose units
 3 - Edit room filter
-4 - Show summary statistics 
+4 - Show summary statistics
 5 - Show temperature by date and time
 6 - Show histogram of temperatures
 7 - Quit
 
-What is your choice? 3
-
-
-4201: Foundations Lab [ACTIVE]
-4204: CS Lab [ACTIVE]
-4205: Tiled Room [ACTIVE]
-4213: STEM Center [ACTIVE]
-4218: Workshop Room [ACTIVE]
-Out: Outside [ACTIVE]
-
-Type the sensor number to toggle (e.g.4201) or x to end 4201 4201
-
-
-4201: Foundations Lab
-4204: CS Lab [ACTIVE]
-4205: Tiled Room [ACTIVE]
-4213: STEM Center [ACTIVE]
-4218: Workshop Room [ACTIVE]
-Out: Outside [ACTIVE]
-
-Type the sensor number to toggle (e.g.4201) or x to end 4201 4205
-
-
-4201: Foundations Lab
-4204: CS Lab [ACTIVE]
-4205: Tiled Room
-4213: STEM Center [ACTIVE]
-4218: Workshop Room [ACTIVE]
-Out: Outside [ACTIVE]
-
-Type the sensor number to toggle (e.g.4201) or x to end 4201 4205
-
-
-4201: Foundations Lab
-4204: CS Lab [ACTIVE]
-4205: Tiled Room [ACTIVE]
-4213: STEM Center [ACTIVE]
-4218: Workshop Room [ACTIVE]
-Out: Outside [ACTIVE]
-
-Type the sensor number to toggle (e.g.4201) or x to end 4201 400
-Invalid Sensor
-
-
-4201: Foundations Lab
-4204: CS Lab [ACTIVE]
-4205: Tiled Room [ACTIVE]
-4213: STEM Center [ACTIVE]
-4218: Workshop Room [ACTIVE]
-Out: Outside [ACTIVE]
-
-Type the sensor number to toggle (e.g.4201) or x to end 4201 x
+What is your choice? 1
+Please enter the filename of the new dataset: Temperatures2017-08-06.csv
+Loaded 11724 samples
+Please provide a 3 to 20 character name for the dataset My Data Set
 
 
 Main Menu
@@ -421,10 +369,10 @@ Main Menu
 1 - Process a new data file
 2 - Choose units
 3 - Edit room filter
-4 - Show summary statistics 
+4 - Show summary statistics
 5 - Show temperature by date and time
 6 - Show histogram of temperatures
 7 - Quit
 
-What is your choice? 
+What is your choice?
 """

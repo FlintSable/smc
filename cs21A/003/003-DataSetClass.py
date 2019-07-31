@@ -70,17 +70,6 @@ def main():
     else:
         print("Fail")
 
-    print("- Try setting a name just right: ", end='')
-
-    try:
-        current_set.name = "New Name"
-        if current_set.name == "New Name":
-            print("Success")
-        else:
-            print("Fail")
-    except ValueError:
-        print("Fail")
-
     print("- Make sure we didn't touch the other object: ", end='')
     if second_set.get_name() == "Unnamed":
         print("Success")
@@ -174,6 +163,7 @@ class TempDataset:
             return False
         else:
             self._name = new_name
+            return True
 
     @classmethod
     def get_num_objects(cls):
