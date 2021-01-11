@@ -5,7 +5,7 @@ Starter code
 """
 
 import time
-from enum import Enum
+from enum import Enum, auto
 
 
 class GameBoardPlayer(Enum):
@@ -14,6 +14,10 @@ class GameBoardPlayer(Enum):
     . which player occupies a space on the board (can be NONE if unoccupied)
     . which player is the winner of the game (can be DRAW)
     """
+    NONE = auto()
+    X = auto()
+    O = auto()
+    DRAW = auto()
 
 
 class ArrayGameBoard:
