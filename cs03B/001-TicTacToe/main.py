@@ -18,30 +18,79 @@ class GameBoardPlayer(Enum):
     X = auto()
     O = auto()
     DRAW = auto()
+    def __str__(self):
+        if(self.name == 'NONE'):
+            return(' ')
+        return (f"{self.name}")
+
 
 
 class ArrayGameBoard:
     """A class that represents a rectangular game board"""
+    board = []
 
     def __init__(self, nrows, ncols):
-        pass
+        try:
+            if(nrows >= 0 and ncols >= 0):
+                self.nrows = nrows
+                self.ncols = ncols
+                self.board = [[] for i in range(nrows)]
+                for i in range(nrows):
+                    for j in range(ncols):
+                        self.board[i].append(GameBoardPlayer.NONE)
+            else:
+                raise ValueError
+        except ValueError:
+            print("Please input a positive integer for rows and columns")
 
     def get_nrows(self):
-        pass
+        return self.nrows
 
     def get_ncols(self):
-        pass
+        return self.ncols
 
     def set(self, row, col, value):
-        pass
+        if(row >= 0 and col >= 0):
+            self.board[row][col] = value
 
     def get(self, row, col):
-        pass
+        if(row >= 0 and col >= 0):
+            return (self.board[row][col])
 
     def __str__(self):
-        return "(To be implemented)"
+        x = []
+        
+        for i in range(self.nrows):
+            r_support = 0
+            for j in range(self.ncols):
+                
+                if(self.board[i][j].name == 'NONE'):
+                    x.append(' ')
+                else:
+                    x.append(self.board[i][j].name)
+
+                if(j < self.ncols-1):
+                    x.append('|')
+                    r_support += 1
+                elif(i < self.nrows-1):
+                    x.append('\n-+-+-\n')
+            
+        return f"{''.join(x)}"
 
     def get_winner(self):
+        for x in range(self.nrows):
+            for y in range(self.ncols):
+                # if(self.board[x][y].name == 'NONE'):
+                #     return self.board[x][y].name
+                print(x, y)
+                # print(self.board[x][y].name != 'NONE')
+                print(self.board[x][y].name)
+                # print((self.board[x][y] == self.board[x][y+1]))
+                if((self.board[x][y].name != 'NONE') and (y < self.ncols - 1) and (self.board[x][y] == self.board[x][y+1])):
+                    linecheck = True
+                elif((self.board[x][y].name != 'NONE') and (linecheck)):
+                    return self.board[x][y]
+
         return GameBoardPlayer.NONE
 
 
@@ -107,12 +156,20 @@ def test_game_board(gb):
 
     print(f"winner of empty board is '{gb.get_winner()}'")
 
-    gb.set(0, 0, GameBoardPlayer.X)
-    gb.set(0, 1, GameBoardPlayer.X)
-    gb.set(0, 2, GameBoardPlayer.X)
+    # gb.set(0, 0, GameBoardPlayer.X)
+    # gb.set(0, 1, GameBoardPlayer.X)
+    # gb.set(0, 2, GameBoardPlayer.X)
+    # gb.set(1, 0, GameBoardPlayer.X)
+    # gb.set(1, 1, GameBoardPlayer.X)
+    # gb.set(1, 2, GameBoardPlayer.X)
+    gb.set(2, 0, GameBoardPlayer.X)
+    gb.set(2, 1, GameBoardPlayer.X)
+    gb.set(2, 2, GameBoardPlayer.X)    
+    # print(gb.board)
     print("gb.get(0, 0) returns", gb.get(0, 0))
     print("gb.get(0, 1) returns", gb.get(0, 1))
     print("gb.get(0, 2) returns", gb.get(0, 2))
+    print(gb)
 
     try:
         gb.get(100, 100)
@@ -129,3 +186,6 @@ if __name__ == '__main__':
     # The same tests should work for both types of *GameBoard
     test_game_board(ArrayGameBoard(3, 3))
     # test_game_board(BitGameBoard(3, 3))
+    
+    # print(GameBoardPlayer.NONE)
+
