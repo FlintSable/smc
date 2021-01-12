@@ -18,19 +18,33 @@ class GameBoardPlayer(Enum):
     X = auto()
     O = auto()
     DRAW = auto()
+    def __str__(self):
+        if(self.name == 'NONE'):
+            return(' ')
+        return (f"{self.name}")
+
 
 
 class ArrayGameBoard:
     """A class that represents a rectangular game board"""
+    nrows = int()
+    ncals = int()
 
     def __init__(self, nrows, ncols):
-        pass
+        try:
+            if(nrows >= 0 and ncols >= 0):
+                self.nrows = nrows
+                self.ncols = ncols
+            else:
+                raise ValueError
+        except ValueError:
+            print("Please input a positive integer for rows and columns")
 
     def get_nrows(self):
-        pass
+        return self.nrows
 
     def get_ncols(self):
-        pass
+        return self.ncols
 
     def set(self, row, col, value):
         pass
@@ -129,3 +143,6 @@ if __name__ == '__main__':
     # The same tests should work for both types of *GameBoard
     test_game_board(ArrayGameBoard(3, 3))
     # test_game_board(BitGameBoard(3, 3))
+    
+    # print(GameBoardPlayer.NONE)
+
