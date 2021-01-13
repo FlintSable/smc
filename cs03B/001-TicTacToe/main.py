@@ -79,27 +79,50 @@ class ArrayGameBoard:
 
     def get_winner(self):
         # check rows for winner
+        linecheck = 0
         for x in range(self.nrows):
-            linecheck = False
             for y in range(self.ncols):
-                # if(self.board[x][y].name == 'NONE'):
-                #     return self.board[x][y].name
-                print(x, y)
-                # print(self.board[x][y].name != 'NONE')
-                print(self.board[x][y].name)
-                # print((self.board[x][y] == self.board[x][y+1]))
                 if((self.board[x][y].name != 'NONE') and (y < self.ncols - 1) and (self.board[x][y] == self.board[x][y+1])):
-                    linecheck = True
-                elif((self.board[x][y].name != 'NONE') and (linecheck)):
+                    linecheck += 1
+                elif((self.board[x][y].name != 'NONE') and (linecheck == self.ncols-1)):
+                    print("row check")
                     return self.board[x][y]
 
-        # check colums for winner
+        # check colunms for winner
+        linecheck = 0
+        for x in range(self.ncols):
+            for y in range(self.nrows):
+                if((self.board[x][y].name != 'NONE') and (x < self.ncols - 1) and (self.board[x][y] == self.board[x+1][y])):
+                    linecheck += 1
+                    print(self.board[x][y] == self.board[x+1][y])
+                    print(linecheck, self.nrows-1)
+
+                elif((self.board[x][y].name != 'NONE') and (linecheck == self.nrows-1)):
+                    print("column check")
+                    return self.board[x][y]
+            linecheck = 0
+
+        # check diags
+        linecheck = 0
+        if(self.nrows == self.ncols):
+            for x in range(self.nrows):
+                for y in range(self.ncols):
+                    if((self.board[x][y].name != 'NONE' and (y < self.ncols-1) and (x < self.nrows-1) and (self.board[x][y] == self.board[x+1][y+1]))):
+                        linecheck += 1
+                        print(linecheck)
+                    elif((self.board[x][y].name != 'NONE') and (linecheck == self.nrows-1)):
+                        print("diag check")
+                        return self.board[0][0]
+        
+        # check draw
+        draw_check = 0
         for x in range(self.nrows):
             for y in range(self.ncols):
-                if((self.board[x][y].name != 'NONE') and (y < self.ncols - 1) and (self.board[x][y] == self.board[x+1][y])):
-                    linecheck = True
-                elif((self.board[x][y].name != 'NONE') and (linecheck)):
-                    return self.board[x][y]
+                if((self.board[x][y].name != 'NONE')):
+                    draw_check += 1
+                elif(draw_check == (self.ncols * self.nrows)):
+                    return GameBoardPlayer.DRAW
+
 
         return GameBoardPlayer.NONE
 
@@ -166,20 +189,14 @@ def test_game_board(gb):
 
     print(f"winner of empty board is '{gb.get_winner()}'")
 
-    # gb.set(0, 0, GameBoardPlayer.X)
-    # gb.set(0, 1, GameBoardPlayer.X)
-    # gb.set(0, 2, GameBoardPlayer.X)
-    # gb.set(1, 0, GameBoardPlayer.X)
-    # gb.set(1, 1, GameBoardPlayer.X)
-    # gb.set(1, 2, GameBoardPlayer.X)
+    gb.set(0, 0, GameBoardPlayer.X)
+    gb.set(0, 1, GameBoardPlayer.X)
     gb.set(0, 2, GameBoardPlayer.X)
-    gb.set(1, 2, GameBoardPlayer.X)
-    gb.set(2, 2, GameBoardPlayer.X)    
-    # print(gb.board)
     print("gb.get(0, 0) returns", gb.get(0, 0))
     print("gb.get(0, 1) returns", gb.get(0, 1))
     print("gb.get(0, 2) returns", gb.get(0, 2))
     print(gb)
+
 
     try:
         gb.get(100, 100)
@@ -196,6 +213,3 @@ if __name__ == '__main__':
     # The same tests should work for both types of *GameBoard
     test_game_board(ArrayGameBoard(3, 3))
     # test_game_board(BitGameBoard(3, 3))
-    
-    # print(GameBoardPlayer.NONE)
-
