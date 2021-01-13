@@ -44,10 +44,10 @@ class ArrayGameBoard:
             print("Please input a positive integer for rows and columns")
 
     def get_nrows(self):
-        return self.nrows
+        return self.nrows.value
 
     def get_ncols(self):
-        return self.ncols
+        return self.ncols.value
 
     def set(self, row, col, value):
         if(row >= 0 and col >= 0):
@@ -196,6 +196,9 @@ def test_game_board(gb):
     print("gb.get(0, 1) returns", gb.get(0, 1))
     print("gb.get(0, 2) returns", gb.get(0, 2))
     print(gb)
+    print(gb.get_ncols)
+    # print(gb.get_nrows)
+
 
 
     try:
