@@ -1,0 +1,21 @@
+__str__() is implemented properly
+
+X|X|X
+-+-+-
+ | | 
+-+-+-
+ | | 
+
+get() and set() behave correctly when row and col are valid
+
+get() and set() raise IndexError when row and col are invalid
+
+get_winner() correctly returns the winner that occupies a row
+
+get_winner() correctly returns the winner that occupies a column
+
+get_winner() correctly returns the winner that occupies a diagonal
+
+get_winner() correctly returns DRAW if the game has no winner and there is not more unoccupied space
+
+get_winner() correctly returns NONE if the game has no winner yet and there are more unoccupied spaces
