@@ -78,7 +78,9 @@ class ArrayGameBoard:
         return f"{''.join(x)}"
 
     def get_winner(self):
+        # check rows for winner
         for x in range(self.nrows):
+            linecheck = False
             for y in range(self.ncols):
                 # if(self.board[x][y].name == 'NONE'):
                 #     return self.board[x][y].name
@@ -87,6 +89,14 @@ class ArrayGameBoard:
                 print(self.board[x][y].name)
                 # print((self.board[x][y] == self.board[x][y+1]))
                 if((self.board[x][y].name != 'NONE') and (y < self.ncols - 1) and (self.board[x][y] == self.board[x][y+1])):
+                    linecheck = True
+                elif((self.board[x][y].name != 'NONE') and (linecheck)):
+                    return self.board[x][y]
+
+        # check colums for winner
+        for x in range(self.nrows):
+            for y in range(self.ncols):
+                if((self.board[x][y].name != 'NONE') and (y < self.ncols - 1) and (self.board[x][y] == self.board[x+1][y])):
                     linecheck = True
                 elif((self.board[x][y].name != 'NONE') and (linecheck)):
                     return self.board[x][y]
@@ -162,8 +172,8 @@ def test_game_board(gb):
     # gb.set(1, 0, GameBoardPlayer.X)
     # gb.set(1, 1, GameBoardPlayer.X)
     # gb.set(1, 2, GameBoardPlayer.X)
-    gb.set(2, 0, GameBoardPlayer.X)
-    gb.set(2, 1, GameBoardPlayer.X)
+    gb.set(0, 2, GameBoardPlayer.X)
+    gb.set(1, 2, GameBoardPlayer.X)
     gb.set(2, 2, GameBoardPlayer.X)    
     # print(gb.board)
     print("gb.get(0, 0) returns", gb.get(0, 0))
