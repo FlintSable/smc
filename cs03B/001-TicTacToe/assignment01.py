@@ -95,13 +95,10 @@ class ArrayGameBoard:
             for y in range(self.nrows):
                 if((self.board[x][y].name != 'NONE') and (x < self.ncols - 1) and (self.board[x][y] == self.board[x+1][y])):
                     linecheck += 1
-                    print(self.board[x][y] == self.board[x+1][y])
-                    print(linecheck, self.nrows-1)
-
+                    print(linecheck)
                 elif((self.board[x][y].name != 'NONE') and (linecheck == self.nrows-1)):
-                    print("column check")
                     return self.board[x][y]
-            linecheck = 0
+
 
         # check diags
         linecheck = 0
@@ -190,9 +187,12 @@ def test_game_board(gb):
 
     print(f"winner of empty board is '{gb.get_winner()}'")
 
+    # gb.set(0, 0, GameBoardPlayer.X)
+    # gb.set(0, 1, GameBoardPlayer.X)
+    # gb.set(0, 2, GameBoardPlayer.X)
     gb.set(0, 0, GameBoardPlayer.X)
-    gb.set(0, 1, GameBoardPlayer.X)
-    gb.set(0, 2, GameBoardPlayer.X)
+    gb.set(1, 0, GameBoardPlayer.X)
+    gb.set(2, 0, GameBoardPlayer.X)
     print("gb.get(0, 0) returns", gb.get(0, 0))
     print("gb.get(0, 1) returns", gb.get(0, 1))
     print("gb.get(0, 2) returns", gb.get(0, 2))
