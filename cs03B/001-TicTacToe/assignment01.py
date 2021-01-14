@@ -1,7 +1,7 @@
 """
-CS3B, Assignment #1, Tic Tac Toe
-Copyright 2020 Zibin Yang
-Starter code
+CS3B, Assignment #1, Tic-tac-toe (Part 1)
+Nicholas Noochla-or
+I wasn't able to get the winner method to fully function correctly. 
 """
 
 import time
@@ -44,10 +44,11 @@ class ArrayGameBoard:
             print("Please input a positive integer for rows and columns")
 
     def get_nrows(self):
-        return self.nrows.value
+        print(self.ncols.values)
+        return (self.nrows.values)
 
     def get_ncols(self):
-        return self.ncols.value
+        return self.ncols.name
 
     def set(self, row, col, value):
         if(row >= 0 and col >= 0):
