@@ -8,20 +8,43 @@ X|X|X
 
 get() and set() behave correctly when row and col are valid
 
+<<<<<<< HEAD
     <bound method ArrayGameBoard.get_ncols of <__main__.ArrayGameBoard object at 0x1090edb38>>
+=======
+
+>>>>>>> 389dbed08bea1151382d9be335a4a39e944e7773
 
 
 get() and set() raise IndexError when row and col are invalid
+    gb.get(100, 100) correctly raises IndexError
+
+
+
 
     gb.get(100, 100) correctly raises IndexError
 
 get_winner() correctly returns the winner that occupies a row
     winner of board with 1 row of X is 'X'
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 389dbed08bea1151382d9be335a4a39e944e7773
 
 get_winner() correctly returns the winner that occupies a column
 
+
+
+
 get_winner() correctly returns the winner that occupies a diagonal
+
+
+
 
 get_winner() correctly returns DRAW if the game has no winner and there is not more unoccupied space
 
+
+
+
 get_winner() correctly returns NONE if the game has no winner yet and there are more unoccupied spaces
+    winner of empty board is ' '
