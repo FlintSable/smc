@@ -8,6 +8,7 @@ class TurtleFlower(Turtle):
         print("Time for Turtle Flower!")
     
     def drawFlower(self, numOfSquares):
+        print(self)
         for i in range(4):
             self.fd(100)
             self.rt(90)
