@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
 from turtle import Turtle
+import time
+
 
 class TurtleFlower(Turtle):
-    """ doc string """
-    def __init__(self, *args, **kwargs):
+    """ creates an instance of Turtle with a method called drawFlower """
+    def __init__(self,*args, **kwargs):
         super(TurtleFlower, self).__init__(*args, **kwargs)
         print("Time for Turtle Flower!")
     
     def drawFlower(self, numOfSquares):
-        print(self)
-        for i in range(4):
-            self.fd(100)
-            self.rt(90)
-        self.end_fill()
+        for i in range(numOfSquares):
+            self.begin_fill()
+            for j in range(4):
+                self.fd(70)
+                self.rt(90)
+            self.lt(360/numOfSquares)
+            self.end_fill()
+                
+
+
 
 
 t = TurtleFlower()
+t.drawFlower(10)
+time.sleep(3)
 
-t.drawFlower(0)
-# print(t)
-# t.right(30)
-# t.forward(100)
-# t.right(90)
-# t.forward(100)
-# t.right(90)
-# t.forward(100)
-# t.right(90)
-# t.forward(100)
 
