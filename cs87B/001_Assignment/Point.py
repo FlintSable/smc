@@ -15,7 +15,7 @@ class Point():
         dy = self.y - other.y
         return sqrt(dx * dx + dy * dy)
 
-    def translate(sefl, dx, dy):
+    def translate(self, dx, dy):
         self.x += dx
         self.y += dy
     
@@ -26,7 +26,7 @@ class Point():
 class Point3D(Point):
     z = 0
     def __init__(self, x=0, y=0, z=0):
-        Point.__init__(self, x, y)
+        super().__init__(x, y)
         self.z = z
     
     def translate(self, dx, dy, dz):
