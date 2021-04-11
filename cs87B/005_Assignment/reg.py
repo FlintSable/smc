@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-<<<<<<< HEAD
+
 
 import re
 
@@ -13,11 +13,3 @@ data.close()
 
 
 print(websites)
-=======
-import re
-
-
-def main():
-    print("main")
-
->>>>>>> c6968ca839456ce9b117eb598622499fea8bf6b1
