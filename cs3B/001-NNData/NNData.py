@@ -2,9 +2,6 @@ from enum import Enum, auto
 import numpy as np
 
 class NNData:
-    # print("NNData class")
-
-
 
     def __init__(self, features=None, labels=None, train_factor=0.9):
         if features is None:
@@ -17,9 +14,12 @@ class NNData:
             self._labels = labels
 
         self._train_factor = NNData.percentage_limiter(train_factor)
-        NNData.load_data(features, labels)
+        NNData.load_data(self._features, self._labels)
 
     def load_data(features, labels):
+        print(len(features))
+        print(len(labels))
+
         if(len(features) != len(labels)):
            raise DataMismatchError
         if(NNData.features is None):
@@ -27,8 +27,8 @@ class NNData:
             NNData.labels(None)
         else:
             try:
-                self._features = np.array(features, dtype=float)
-                self._labels = np.array(labels, dtype=float)
+                NNData._features = np.array(features, dtype=float)
+                NNData._labels = np.array(labels, dtype=float)
             except:
                 raise  ValueError
 
@@ -62,7 +62,7 @@ class NNData:
 
 
     def __str__(self):
-        return f"output features: {self.features}"
+        return f"features: {self._features} \nlables: {self._labels} \nfactor: {self._train_factor}"
 
     class Order(Enum):
         RANDOM = auto()
@@ -93,12 +93,33 @@ class NNData:
 
 class DataMismatchError(Exception):
     """ Custom error place holder """
-    pass        
+    pass
+
+def load_XOR():
+    x = [[0,0], [1,0], [0,1], [1,1]]
+    y = [[0],[1],[1],[0]]
+    new_data = NNData(x, y, 1)
+    print(new_data)
+
+def unit_test():
+    ## NNData.load_data() raises a DataMismatchError if features and labels have different lengths when calling.
+    ## Verify that self._features and self._labels are set to None.
+    # DataMatchTest = NNData([[0,0],[1,1],[0,1]],[[1]])
+
+    ## NNData.load_data() raises a ValueError if features or labels contain non-float values (like strings) when calling load_data(). 
+    ## Verify that self._features and self._labels are set to None.
+    #DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
+
+
+
+# Verify that if invalid data values  are passed to the constructor (such as lists of different lengths, or lists that cannot be made into a homogeneous array of floats), self._features and self._labels are set to None.
+# Verify that NNData limits the training factor to zero if a negative number is passed
+# Verify that NNData limits the training factor to one if a number greater than one is passed
+
 
 def main():
-    initialize = NNData([1,2,3], [3,3,3])
-    initialize.load_data
-    print(initialize)
+    load_XOR()
+    unit_test()
 
 
 if __name__=="__main__":
