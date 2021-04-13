@@ -1,21 +1,28 @@
 from enum import Enum, auto
 import numpy as np
+import unittest
 
 class NNData:
     # print("NNData class")
 
 
 
-    def __init__(self, features=None, labels=None, train_factor=0.9):
+    def __init__(self, train_factor: float, features=None, labels=None):
         if features is None:
             self._features = []
         else:
             self._features = features
+
         if labels is None:
             self._labels = []
         else:
             self._labels = labels
 
+        if train_factor is None:
+            self._train_factor = 0.7
+        else:
+            self._train_factor = train_factor
+            
         self._train_factor = NNData.percentage_limiter(train_factor)
         NNData.load_data(features, labels)
 
@@ -27,8 +34,8 @@ class NNData:
             NNData.labels(None)
         else:
             try:
-                self._features = np.array(features, dtype=float)
-                self._labels = np.array(labels, dtype=float)
+                NNData._features = np.array(features, dtype=float)
+                NNData._labels = np.array(labels, dtype=float)
             except:
                 raise  ValueError
 
@@ -93,12 +100,18 @@ class NNData:
 
 class DataMismatchError(Exception):
     """ Custom error place holder """
-    pass        
+    pass
+       
+def load_XOR():
+    pass
+
+def unit_test():
+    NNData.load_data([1,2,3], [4,5,6,7])
 
 def main():
     initialize = NNData([1,2,3], [3,3,3])
     initialize.load_data
-    print(initialize)
+    unit_test()
 
 
 if __name__=="__main__":
