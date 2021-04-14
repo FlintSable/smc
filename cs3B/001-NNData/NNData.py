@@ -135,3 +135,12 @@ def main():
 
 if __name__=="__main__":
     main()
+
+
+"""
+Sample run
+
+    features: [[0, 0], [1, 0], [0, 1], [1, 1]] 
+    lables: [[0], [1], [1], [0]] 
+    factor: 1.0
+"""
