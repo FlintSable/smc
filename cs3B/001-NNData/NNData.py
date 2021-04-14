@@ -1,9 +1,10 @@
 from enum import Enum, auto
 import numpy as np
+import unittest
 
 class NNData:
 
-    def __init__(self, features=None, labels=None, train_factor=0.0):
+    def __init__(self, features=None, labels=None, train_factor=0.7):
 
         if features is None:
             self._features = []
@@ -25,6 +26,11 @@ class NNData:
         if(train_factor < 0 or train_factor > 1):
             raise ValueError
 
+        if train_factor is None:
+            self._train_factor = 0.7
+        else:
+            self._train_factor = train_factor
+            
         self._train_factor = NNData.percentage_limiter(train_factor)
         NNData.load_data(self._features, self._labels)
 
@@ -133,5 +139,15 @@ def main():
     # unit_test()
 
 
+
 if __name__=="__main__":
     main()
+
+
+"""
+Sample run
+
+    features: [[0, 0], [1, 0], [0, 1], [1, 1]] 
+    lables: [[0], [1], [1], [0]] 
+    factor: 1
+"""
