@@ -3,23 +3,33 @@ import numpy as np
 
 class NNData:
 
-    def __init__(self, features=None, labels=None, train_factor=0.9):
+    def __init__(self, features=None, labels=None, train_factor=0.0):
+
         if features is None:
             self._features = []
         else:
             self._features = features
+
         if labels is None:
             self._labels = []
         else:
             self._labels = labels
+        
+        if(len(features) != len(labels)):
+            self._features = []
+            self._labels = []
+        # elif(not all(isinstance(x, float) for x in features)):
+        #     self._labels = []
+        #     self._features = []
+        
+        if(train_factor < 0 or train_factor > 1):
+            raise ValueError
 
         self._train_factor = NNData.percentage_limiter(train_factor)
         NNData.load_data(self._features, self._labels)
 
     def load_data(features, labels):
-        print(len(features))
-        print(len(labels))
-
+        """ changes _features and _labels to numpy arrays"""
         if(len(features) != len(labels)):
            raise DataMismatchError
         if(NNData.features is None):
@@ -30,7 +40,7 @@ class NNData:
                 NNData._features = np.array(features, dtype=float)
                 NNData._labels = np.array(labels, dtype=float)
             except:
-                raise  ValueError
+                raise ValueError
 
             
 
@@ -83,7 +93,6 @@ class NNData:
                 percentage = float(percentage)
             except:
                 raise TypeError("could not convert to float")
-        
         if(percentage < 0):
             return 0
         elif(percentage < 1):
@@ -98,28 +107,30 @@ class DataMismatchError(Exception):
 def load_XOR():
     x = [[0,0], [1,0], [0,1], [1,1]]
     y = [[0],[1],[1],[0]]
-    new_data = NNData(x, y, 1)
+    new_data = NNData(x, y, 0.5)
     print(new_data)
 
 def unit_test():
     ## NNData.load_data() raises a DataMismatchError if features and labels have different lengths when calling.
     ## Verify that self._features and self._labels are set to None.
+
     # DataMatchTest = NNData([[0,0],[1,1],[0,1]],[[1]])
 
     ## NNData.load_data() raises a ValueError if features or labels contain non-float values (like strings) when calling load_data(). 
     ## Verify that self._features and self._labels are set to None.
+
     # DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
+
+    ## Verify that NNData limits the training factor to zero if a negative number is passed
+    ## Verify that NNData limits the training factor to one if a number greater than one is passed
+
+    # DataFactorTest = NNData([[0,0],[1,1],[0,1]],[[1]], -1)
+    # DataFactorTest = NNData([[0,0],[1,1],[0,1]],[[1]], 2)
     pass
-
-
-# Verify that if invalid data values  are passed to the constructor (such as lists of different lengths, or lists that cannot be made into a homogeneous array of floats), self._features and self._labels are set to None.
-# Verify that NNData limits the training factor to zero if a negative number is passed
-# Verify that NNData limits the training factor to one if a number greater than one is passed
-
 
 def main():
     load_XOR()
-    unit_test()
+    # unit_test()
 
 
 if __name__=="__main__":
