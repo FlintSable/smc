@@ -108,7 +108,7 @@ def unit_test():
 
     ## NNData.load_data() raises a ValueError if features or labels contain non-float values (like strings) when calling load_data(). 
     ## Verify that self._features and self._labels are set to None.
-    #DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
+    # DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
     pass
 
 
