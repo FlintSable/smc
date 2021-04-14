@@ -3,8 +3,12 @@ import numpy as np
 
 class NNData:
 
+<<<<<<< HEAD
     def __init__(self, features=None, labels=None, train_factor=0.0):
 
+=======
+    def __init__(self, features=None, labels=None, train_factor=0.9):
+>>>>>>> 3e87539d440d038e44a5660857cf17dc3088f688
         if features is None:
             self._features = []
         else:
@@ -29,7 +33,13 @@ class NNData:
         NNData.load_data(self._features, self._labels)
 
     def load_data(features, labels):
+<<<<<<< HEAD
         """ changes _features and _labels to numpy arrays"""
+=======
+        print(len(features))
+        print(len(labels))
+
+>>>>>>> 3e87539d440d038e44a5660857cf17dc3088f688
         if(len(features) != len(labels)):
            raise DataMismatchError
         if(NNData.features is None):
@@ -107,17 +117,25 @@ class DataMismatchError(Exception):
 def load_XOR():
     x = [[0,0], [1,0], [0,1], [1,1]]
     y = [[0],[1],[1],[0]]
+<<<<<<< HEAD
     new_data = NNData(x, y, 0.5)
+=======
+    new_data = NNData(x, y, 1)
+>>>>>>> 3e87539d440d038e44a5660857cf17dc3088f688
     print(new_data)
 
 def unit_test():
     ## NNData.load_data() raises a DataMismatchError if features and labels have different lengths when calling.
     ## Verify that self._features and self._labels are set to None.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e87539d440d038e44a5660857cf17dc3088f688
     # DataMatchTest = NNData([[0,0],[1,1],[0,1]],[[1]])
 
     ## NNData.load_data() raises a ValueError if features or labels contain non-float values (like strings) when calling load_data(). 
     ## Verify that self._features and self._labels are set to None.
+<<<<<<< HEAD
 
     # DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
 
@@ -131,6 +149,20 @@ def unit_test():
 def main():
     load_XOR()
     # unit_test()
+=======
+    #DataNoneSetTest = NNData([["not"], ["correct"], ["type"]], [[0],[0],[0]])
+
+
+
+# Verify that if invalid data values  are passed to the constructor (such as lists of different lengths, or lists that cannot be made into a homogeneous array of floats), self._features and self._labels are set to None.
+# Verify that NNData limits the training factor to zero if a negative number is passed
+# Verify that NNData limits the training factor to one if a number greater than one is passed
+
+
+def main():
+    load_XOR()
+    unit_test()
+>>>>>>> 3e87539d440d038e44a5660857cf17dc3088f688
 
 
 if __name__=="__main__":
