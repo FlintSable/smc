@@ -74,25 +74,36 @@ class NNData:
         pass
 
     def prime_data(self, target_set=None, order=None):
+        # print(self._train_indices)
         if(target_set is self.Set.TRAIN):
             if(order is self.Order.RANDOM):
-                self._train_pool = random.shuffle(self._train_indices.copy())
+                self._train_pool = random.shuffle(list(self._train_indices))
                 return
-            self._train_pool = self._train_indices.copy()
+            self._train_pool = list(self._train_indices)
         elif(target_set is self.Set.TEST):
             if(order is self.Order.RANDOM):
-                self._test_pool = random.shuffle(self._test_indices.copy())
+                self._test_pool = random.shuffle(list(self._test_indices))
                 return
-            self._test_pool = self._test_indices.copy()
+            self._test_pool = list(self._test_indices)
         elif(target_set is None):
             if(order is self.Order.RANDOM):
-                self._train_pool = self._train_indices.copy()
-                # self._train_pool = random.shuffle(self._train_pool)
-                # self._test_pool = random.shuffle(self._test_indices.copy())
-                self._test_pool = self._test_indices.copy()
+                # print(f"suffle: {random.shuffle(list(self._train_indices))}")
+                # self._train_pool = random.shuffle(list(self._train_indices))
+                # # self._test_pool = random.shuffle(self._test_indices.copy())
+                # self._test_pool = random.shuffle(list(self._test_indices))
+                self._train_pool = list(self._train_indices)
+                self._test_pool = list(self._test_indices)
+                print(f"1. self train pool: {self._train_pool}")
+                random.shuffle(self._train_pool)
+                random.shuffle(self._test_pool)
+                print(f"shuffled train pool: {self._train_pool}")
+
             else:
-                self._train_pool = self._train_indices.copy()
-                self._test_pool = self._test_indices.copy()
+                self._train_pool = list(self._train_indices)
+                self._test_pool = list(self._test_indices)
+                # print("here?")
+                # print(self._train_pool)
+                # print(randon.shuffle(self._train_pool))
         
 
     @property
@@ -188,14 +199,12 @@ def unit_test():
         assert len(our_data_0._test_pool) == 7
         assert our_data_0._train_indices == list(our_data_0._train_pool)
         assert our_data_0._test_indices == list(our_data_0._test_pool)
-        print(our_big_data._train_indices)
-        print(list(our_big_data._train_pool))
+        # print(f"our data train indicies: {our_data_0._train_indices}")
+        # print(f"our data train pool: {list(our_data_0._train_pool)}")
         our_big_data.prime_data(order=NNData.Order.RANDOM)
-        print(our_big_data._train_indices != list(our_big_data._train_pool))
-        print(our_big_data._train_indices)
-        print(list(our_big_data._train_pool))
+        print(f"our big data train indicies: {our_big_data._train_indices}")
         assert our_big_data._train_indices != list(our_big_data._train_pool)
-        # assert our_big_data._test_indices != list(our_big_data._test_pool)
+        assert our_big_data._test_indices != list(our_big_data._test_pool)
     except:
         print("There are errors that likely come from prime_data")
         errors = True
