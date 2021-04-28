@@ -1,7 +1,7 @@
 from enum import Enum, auto
 import numpy as np
 import random, math, collections
-import unittest
+# import unittest
 
 class DataMismatchError(Exception):
     """ Custom error place holder """
@@ -56,16 +56,25 @@ class NNData:
             raise ValueError("Label and example lists must be homogeneous and numeric lists of lists")
 
     def split_set(self, new_train_factor=None):
-        if(new_train_factor is not None):
+        if new_train_factor is not None:
             self._train_factor = NNData.percentage_limiter(new_train_factor)
-            feature_size = len(self._features)
-            self._train_indices = random.sample(range(0, feature_size), int(feature_size * self._train_factor))
-            self._test_indices = [x for x in range(0, feature_size) if x not in self._train_indices] # maybe change this
-            self._train_indices.sort()
-            self._test_indices.sort()
+        total_set_size = len(self._features)
+        train_set_size = math.floor(total_set_size * self._train_factor)
+        self._train_indices = random.sample(range(total_set_size), train_set_size)
+        self._test_indices = list(set(range(total_set_size)) - set(self._train_indices))
+        self._train_indices.sort()
+        self._test_indices.sort()
     
     def get_one_item(self, target_set=None):
-        pass
+        if(target_set is self.Set.TRAIN or target_set is None):
+            # use self._train_pool to find the pair
+            pass
+        elif(target_set is self.Set.TEST):
+            # use self._test_pool
+            print(self._test_pool)
+            pass
+
+        return
 
     def number_of_samples(self, target_set=None):
         pass
@@ -74,36 +83,32 @@ class NNData:
         pass
 
     def prime_data(self, target_set=None, order=None):
-        # print(self._train_indices)
         if(target_set is self.Set.TRAIN):
             if(order is self.Order.RANDOM):
                 self._train_pool = random.shuffle(list(self._train_indices))
                 return
-            self._train_pool = list(self._train_indices)
+            for i in range(len(self._train_indices)):
+                    self._train_pool.append(self._train_indices[i])
         elif(target_set is self.Set.TEST):
             if(order is self.Order.RANDOM):
                 self._test_pool = random.shuffle(list(self._test_indices))
                 return
-            self._test_pool = list(self._test_indices)
+            for j in range(len(self._test_indices)):
+                    self._test_pool.append(self._test_indices[j])
         elif(target_set is None):
             if(order is self.Order.RANDOM):
-                # print(f"suffle: {random.shuffle(list(self._train_indices))}")
-                # self._train_pool = random.shuffle(list(self._train_indices))
-                # # self._test_pool = random.shuffle(self._test_indices.copy())
-                # self._test_pool = random.shuffle(list(self._test_indices))
                 self._train_pool = list(self._train_indices)
                 self._test_pool = list(self._test_indices)
-                print(f"1. self train pool: {self._train_pool}")
                 random.shuffle(self._train_pool)
                 random.shuffle(self._test_pool)
-                print(f"shuffled train pool: {self._train_pool}")
-
             else:
-                self._train_pool = list(self._train_indices)
-                self._test_pool = list(self._test_indices)
-                # print("here?")
-                # print(self._train_pool)
-                # print(randon.shuffle(self._train_pool))
+                # self._train_pool = list(self._train_indices)
+                # self._test_pool = list(self._test_indices)
+                for i in range(len(self._train_indices)):
+                    self._train_pool.append(self._train_indices[i])
+                for j in range(len(self._test_indices)):
+                    self._test_pool.append(self._test_indices[j])
+
         
 
     @property
@@ -201,8 +206,8 @@ def unit_test():
         assert our_data_0._test_indices == list(our_data_0._test_pool)
         # print(f"our data train indicies: {our_data_0._train_indices}")
         # print(f"our data train pool: {list(our_data_0._train_pool)}")
-        our_big_data.prime_data(order=NNData.Order.RANDOM)
-        print(f"our big data train indicies: {our_big_data._train_indices}")
+        # our_big_data.prime_data(order=NNData.Order.RANDOM)
+        # print(f"our big data train indicies: {our_big_data._train_indices}")
         assert our_big_data._train_indices != list(our_big_data._train_pool)
         assert our_big_data._test_indices != list(our_big_data._test_pool)
     except:
@@ -252,7 +257,8 @@ if __name__=="__main__":
 """
 Sample run
 
-[0. 1. 2. 3. 4. 5. 6. 7. 8. 9.]
+Train Indicies: [0, 7, 8]
+Test Indicies: [1, 2, 3, 4, 5, 6, 9]
 No errors were identified by the unit test.
 You should still double check that your code meets spec.
 You should also check that PyCharm does not identify any PEP-8 issues.
